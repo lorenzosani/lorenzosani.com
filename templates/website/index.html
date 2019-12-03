@@ -1,23 +1,16 @@
 {% extends 'base.html' %} {% block content %}
-<div class="parallax">Main page</div>
+<div class="parallax main">
+  <div id='stars'></div>
+  <div id='stars2'></div>
+  <div id='stars3'></div>
+  <div id='title'>
+    Hello, Universe.
+  </div>
+</div>
 <div id="fullpage">
     <div class="section">About</div>
     <div class="section">Projects</div>
     <div class="section">Contact</div>
     <div class="section">Footer</div>
 </div>
-<script>
-$(document).ready(() => {
- //Enable fullpage.js
- $('#fullpage').fullpage({
-    licenseKey: '6565F2B8-BA0F41C3-BC8C06A0-1D42DA81',
-    anchors:['main','about', 'projects', 'contact'],
-		autoScrolling:true,
-    scrollHorizontally: false,
-    sectionsColor : ['red', 'grey', 'blue', 'blue'],
-    scrollingSpeed: 1200,
-	});
-	$.fn.fullpage.setAllowScrolling(true);
-});
-</script>
 {% endblock %}

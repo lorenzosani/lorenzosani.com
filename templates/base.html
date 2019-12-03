@@ -19,7 +19,9 @@
       rel="stylesheet"
       crossorigin="anonymous"
     />
+    <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text&display=swap" rel="stylesheet">
     <link href="{% static 'style.css' %}" rel="stylesheet" />
+    <link href="{% static 'stars.css' %}" rel="stylesheet" />
 
     <!-- SCRIPTS -->
     <script
@@ -35,10 +37,11 @@
       src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.extensions.min.js"
       crossorigin="anonymous"
     ></script>
+    <script src="{% static 'script.js' %}"></script>
 
     <title>Lorenzo Sani - Portfolio Website</title>
   </head>
-  <body>
+  <body style="background-color:#00335d">
     {% block content %} {% endblock %}
   </body>
 </html>

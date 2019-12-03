@@ -1,12 +1,35 @@
+body{
+  background-image: #00335d;
+}
+
 .parallax{
-    background-image: url("");
-
-  /* Set a specific height */
   height: 100vh; 
-
-  /* Create the parallax scrolling effect */
   background-attachment: fixed !important;
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
+}
+
+.main #title {
+  -webkit-font-smoothing: antialiased;
+  opacity: 0;
+  position: absolute;
+  top: 30%;
+  left: 0;
+  right: 0;
+  color: #FFF;
+  text-align: center;
+  font-family: 'DM Serif Text', serif;
+  font-size: 10vh;
+  transition: opacity 1s;
+}
+
+#loader {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100vw;
+	height: 100vh;
+	z-index: 9999;
+	background-image: linear-gradient(0deg, #00172a, #00335d 72%);
 }
