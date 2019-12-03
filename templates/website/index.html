@@ -1,20 +1,22 @@
 {% extends 'base.html' %} {% block content %}
+<div class="parallax">Main page</div>
 <div id="fullpage">
-    <div class="section">Main page</div>
     <div class="section">About</div>
     <div class="section">Projects</div>
     <div class="section">Contact</div>
+    <div class="section">Footer</div>
 </div>
 <script>
 $(document).ready(() => {
-	$('#fullpage').fullpage({
+ //Enable fullpage.js
+ $('#fullpage').fullpage({
     licenseKey: '6565F2B8-BA0F41C3-BC8C06A0-1D42DA81',
-    anchors:['main', 'about', 'projects', 'contact'],
+    anchors:['main','about', 'projects', 'contact'],
 		autoScrolling:true,
     scrollHorizontally: false,
-    sectionsColor : ['blue', 'red', 'grey', 'blue'],
+    sectionsColor : ['red', 'grey', 'blue', 'blue'],
+    scrollingSpeed: 1200,
 	});
-
 	$.fn.fullpage.setAllowScrolling(true);
 });
 </script>
