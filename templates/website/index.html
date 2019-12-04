@@ -1,16 +1,31 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} {% block content %} {% load static %}
 <div class="parallax main">
-  <div id='stars'></div>
-  <div id='stars2'></div>
-  <div id='stars3'></div>
-  <div id='title'>
+  <div id="stars"></div>
+  <div id="stars2"></div>
+  <div id="stars3"></div>
+  <section class="navigation">
+    <div class="nav-container sticky-top">
+      <nav>
+        <div class="nav-mobile">
+          <a id="nav-toggle" href="#!"><span></span></a>
+        </div>
+        <ul class="nav-list">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#contact"><img src="{% static 'linkedin.png' %}" height="24px" width="24px"></a></li>
+        </ul>
+      </nav>
+    </div>
+  </section>
+  <div id="title">
     Hello, Universe.
   </div>
 </div>
 <div id="fullpage">
-    <div class="section">About</div>
-    <div class="section">Projects</div>
-    <div class="section">Contact</div>
-    <div class="section">Footer</div>
+  <div class="section">About</div>
+  <div class="section">Projects</div>
+  <div class="section">Contact</div>
+  <div class="section">Footer</div>
 </div>
 {% endblock %}

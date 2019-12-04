@@ -1,7 +1,3 @@
-body{
-  background-image: #00335d;
-}
-
 .parallax{
   height: 100vh; 
   background-attachment: fixed !important;
@@ -32,4 +28,130 @@ body{
 	height: 100vh;
 	z-index: 9999;
 	background-image: linear-gradient(0deg, #00172a, #00335d 72%);
+}
+
+
+.navigation {
+  height: 70px;
+  background: transparent;
+  opacity: 0;
+  transition: opacity 3s;
+}
+
+.nav-container {
+  margin: 0 auto;
+}
+
+nav {
+  float: right;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  float: left;
+  position: relative;
+}
+nav ul li a,
+nav ul li a:visited {
+  font-weight: bold;
+  display: block;
+  padding: 0 30px;
+  line-height: 70px;
+  background: transparent;
+  color: white;
+  text-decoration: none;
+}
+/* Link on hover */
+nav ul li a:hover,
+nav ul li a:visited:hover {
+  text-decoration: none;
+  color: white;
+}
+/* Mobile navigation */
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: transparent;
+  height: 70px;
+  width: 70px;
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-mobile {
+    display: block;
+  }
+
+  nav {
+    width: 100%;
+    padding: 70px 0 15px;
+  }
+  nav ul {
+    display: none;
+    background: #00335d;
+    margin: 20px;
+    border-radius: 10px;
+    height: 80vh;
+  }
+  nav ul li {
+    float: none;
+  }
+  nav ul li a {
+    padding: 15px;
+    line-height: 20px;
+  }
+  nav ul li ul li a {
+    padding-left: 30px;
+  }
+
+  .nav-dropdown {
+    position: static;
+  }
+}
+@media screen and (min-width: 768px) {
+  .nav-list {
+    display: block !important;
+  }
+}
+#nav-toggle {
+  position: absolute;
+  left: 18px;
+  top: 22px;
+  cursor: pointer;
+  padding: 10px 35px 16px 0px;
+}
+#nav-toggle span,
+#nav-toggle span:before,
+#nav-toggle span:after {
+  cursor: pointer;
+  border-radius: 1px;
+  height: 5px;
+  width: 35px;
+  background: white;
+  position: absolute;
+  display: block;
+  content: '';
+  transition: all 300ms ease-in-out;
+}
+#nav-toggle span:before {
+  top: -10px;
+}
+#nav-toggle span:after {
+  bottom: -10px;
+}
+#nav-toggle.active span {
+  background-color: transparent;
+}
+#nav-toggle.active span:before, #nav-toggle.active span:after {
+  top: 0;
+}
+#nav-toggle.active span:before {
+  transform: rotate(45deg);
+}
+#nav-toggle.active span:after {
+  transform: rotate(-45deg);
 }
