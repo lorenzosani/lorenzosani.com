@@ -27,25 +27,25 @@
     <link href="{% static 'style.css' %}" rel="stylesheet" />
     <link href="{% static 'stars.css' %}" rel="stylesheet" />
 
-    <!-- SCRIPTS -->
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.min.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.extensions.min.js"
-      crossorigin="anonymous"
-    ></script>
-    <script src="{% static 'script.js' %}"></script>
-
     <title>Lorenzo Sani - Portfolio Website</title>
   </head>
   <body style="background-color:#00335d">
     {% block content %} {% endblock %}
   </body>
+  
+  <!-- SCRIPTS -->
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.min.js"
+    crossorigin="anonymous"
+  ></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/3.0.7/fullpage.extensions.min.js"
+    crossorigin="anonymous"
+  ></script>
+  <script src="{% static 'script.js' %}"></script>
 </html>
