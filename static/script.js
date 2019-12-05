@@ -10,7 +10,7 @@ $(document).ready(() => {
     $('nav ul').slideToggle();
   });
   $('nav ul li a').click(function() {
-    if ($('body').width() <= 768) {
+    if ($('body').width() <= 769) {
       $('#nav-toggle').removeClass('active');
       $('nav ul').slideToggle();
     }

@@ -16,21 +16,15 @@
   color: #FFF;
   text-align: center;
   font-family: 'DM Serif Text', serif;
-  font-size: 10vh;
+  font-size: 130px;
   transition: opacity 1s;
 }
 
-#loader {
-	position: fixed;
-	left: 0px;
-	top: 0px;
-	width: 100vw;
-	height: 100vh;
-	z-index: 9999;
-	background-image: linear-gradient(0deg, #00172a, #00335d 72%);
+@media(max-width: 769px){
+  .main #title{
+    font-size: 12vw;
+  }
 }
-
-
 .navigation {
   height: 70px;
   background: transparent;
@@ -49,6 +43,7 @@ nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
+  font-size: 15px;
 }
 nav ul li {
   float: left;
@@ -81,14 +76,14 @@ nav ul li a:visited:hover {
   width: 70px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 769px) {
   .nav-mobile {
     display: block;
   }
 
   nav {
     width: 100%;
-    padding: 70px 0 15px;
+    padding: 0px 0 15px;
   }
   nav ul {
     padding: 15vh 0;
@@ -96,8 +91,7 @@ nav ul li a:visited:hover {
     font-size: 5vh;
     display: none;
     background: #FC7753;
-    margin: 20px;
-    border-radius: 10px;
+    height: 100vh;
   }
   nav ul li {
     float: none;
@@ -115,9 +109,9 @@ nav ul li a:visited:hover {
     position: static;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
   .nav-list {
-    display: block !important;
+    display: block;
   }
 }
 #nav-toggle {
@@ -149,12 +143,13 @@ nav ul li a:visited:hover {
 #nav-toggle.active span {
   background-color: transparent;
 }
-#nav-toggle.active span:before, #nav-toggle.active span:after {
-  top: 0;
-}
 #nav-toggle.active span:before {
+  top: 0px;
   transform: rotate(45deg);
+  background-color: #00335d;
 }
 #nav-toggle.active span:after {
+  bottom: 0px;
   transform: rotate(-45deg);
+  background-color: #00335d;
 }
