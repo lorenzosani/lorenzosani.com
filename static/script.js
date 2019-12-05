@@ -9,6 +9,12 @@ $(document).ready(() => {
   $('#nav-toggle').click(function() {
     $('nav ul').slideToggle();
   });
+  $('nav ul li a').click(function() {
+    if ($('body').width() <= 768) {
+      $('#nav-toggle').removeClass('active');
+      $('nav ul').slideToggle();
+    }
+  });
   // Hamburger to X toggle
   $('#nav-toggle').on('click', function() {
     this.classList.toggle('active');
@@ -21,7 +27,7 @@ $(document).ready(() => {
     anchors: ["main", "about", "projects", "contact"],
     autoScrolling: true,
     scrollHorizontally: false,
-    sectionsColor: ["red", "grey", "blue", "blue"],
+    sectionsColor: ["#FC7753", "grey", "blue", "blue"],
     scrollingSpeed: 1200
   });
   $.fn.fullpage.setAllowScrolling(true);

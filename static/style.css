@@ -35,7 +35,7 @@
   height: 70px;
   background: transparent;
   opacity: 0;
-  transition: opacity 3s;
+  transition: opacity 1s;
 }
 
 .nav-container {
@@ -68,7 +68,7 @@ nav ul li a:visited {
 nav ul li a:hover,
 nav ul li a:visited:hover {
   text-decoration: none;
-  color: white;
+  color: #FC7753;
 }
 /* Mobile navigation */
 .nav-mobile {
@@ -91,18 +91,21 @@ nav ul li a:visited:hover {
     padding: 70px 0 15px;
   }
   nav ul {
+    padding: 15vh 0;
+    text-align: center;
+    font-size: 5vh;
     display: none;
-    background: #00335d;
+    background: #FC7753;
     margin: 20px;
     border-radius: 10px;
-    height: 80vh;
   }
   nav ul li {
     float: none;
   }
   nav ul li a {
-    padding: 15px;
+    padding: 30px 15px;
     line-height: 20px;
+    color: #00335d !important;
   }
   nav ul li ul li a {
     padding-left: 30px;
