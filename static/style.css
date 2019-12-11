@@ -6,6 +6,12 @@
   background-size: cover !important;
 }
 
+#home .disappear{
+  transform: translateY(-100px);
+  opacity: 0 !important;
+  transition: all .5s  ease-in-out .1s !important;
+}
+
 #home #title {
   -webkit-font-smoothing: antialiased;
   opacity: 0;
@@ -17,7 +23,7 @@
   text-align: center;
   font-family: 'DM Serif Text', serif;
   font-size: 130px;
-  transition: opacity 1s;
+  transition: all .5s  ease-in-out;
 }
 
 @media(max-width: 769px){
