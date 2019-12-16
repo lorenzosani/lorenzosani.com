@@ -1,6 +1,6 @@
 $(document).ready(() => {
   // Title animation
-  $("#title").css("opacity", "1");
+  $("#header").css("opacity", "1");
   $(".navigation").css("opacity", "1");
 
   // Navbar toggle
@@ -18,18 +18,34 @@ $(document).ready(() => {
     this.classList.toggle("active");
   });
 
-  // Homepage scroll animation
-  animateHome = (e, currentPage) => {
-    if (e.originalEvent.wheelDelta < 0 && currentPage == 'home') {
-      $('#title').addClass('disappear');
+  // Homepage animation on click
+  homeDisappear = () => {
+    $('#header').addClass('disappear');
       if ($("body").width() > 769) {
         $('.navigation').addClass('disappear');
       }
-    } else if (e.originalEvent.wheelDelta > 0 && currentPage == 'about') {
-      $('#title').removeClass('disappear');
+  }
+  homeAppear = () => {
+    setTimeout(() => {
+      $('#header').removeClass('disappear');
       if ($("body").width() > 769) {
         $('.navigation').removeClass('disappear');
       }
+    }, 100);
+  }
+  $(".text-hover").click(function(){
+    homeDisappear();
+  });
+  $("#home-btn-nav").click(function(){
+    homeAppear();
+  });
+
+  // Homepage scroll animation
+  animateHome = (e, currentPage) => {
+    if (e.originalEvent.wheelDelta < 0 && currentPage == 'home') {
+      homeDisappear();
+    } else if (e.originalEvent.wheelDelta > 0 && currentPage == 'about') {
+      homeAppear();
     }
   }
   $("#home").bind("mousewheel", (e) => { animateHome(e, 'home') });
@@ -42,7 +58,7 @@ $(document).ready(() => {
     autoScrolling: true,
     scrollHorizontally: false,
     sectionsColor: ["#FC7753", "grey", "blue", "blue"],
-    scrollingSpeed: 1200
+    scrollingSpeed: 1200,
   });
   $.fn.fullpage.setAllowScrolling(true);
 });

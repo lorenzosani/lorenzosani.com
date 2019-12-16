@@ -11,18 +11,23 @@
           <a id="nav-toggle" href="#!"><span></span></a>
         </div>
         <ul class="nav-list">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="#contact"><img src="{% static 'linkedin.png' %}" height="24px" width="24px"></a></li>
+          <li><a href="#main" class="active text-hover text-hover-linethrough-goes-right" id="home-btn-nav">Home</a></li>
+          <li><a href="#about" class="text-hover text-hover-linethrough-goes-right">About</a></li>
+          <li><a href="#projects" class="text-hover text-hover-linethrough-goes-right">Projects</a></li>
+          <li><a href="#contact" class="text-hover text-hover-linethrough-goes-right">Contact</a></li>
+          <li><a href="#contact" class="text-hover text-hover-linethrough-goes-right"><img src="{% static 'linkedin.png' %}" height="24px" width="24px"></a></li>
         </ul>
       </nav>
     </div>
   </section>
-  <!-- TITLE -->
-  <div id="title">
-    Hello, Universe.
+  <!-- HOME SCREEN -->
+  <div class="container center-page" id="header">
+    <div id="title">
+      Hello, Universe.
+    </div>
+    <div id="subtitle">
+      I'm Lorenzo! Sometimes I design, develop and build stuff. <br/> I uploaded some projects <a href="#projects" class="text-hover text-hover-linethrough-goes-right">here</a> so everybody can see how cool I am.
+    </div>
   </div>
 </div>
 <div id="fullpage">
