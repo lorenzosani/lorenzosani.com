@@ -33,7 +33,7 @@ $(document).ready(() => {
       }
     }, 100);
   }
-  $(".text-hover").click(function(){
+  $(".text-hover,.learn-more").click(function(){
     homeDisappear();
   });
   $("#home-btn-nav").click(function(){

@@ -14,7 +14,7 @@
 
 .center-page {
   position: absolute;
-  top: 30%;
+  top: 25vh;
   left: 0;
   right: 0;
   text-align: center;
@@ -36,11 +36,14 @@
 }
 
 @media (max-width: 769px) {
+  .center-page{
+    top: 17vh;
+  }
   #home #title {
     font-size: 12vw;
   }
   #home #subtitle {
-    font-size: 4vw;
+    font-size: 7vw;
     max-width: 80%;
   }
 }
@@ -85,10 +88,10 @@ nav ul li a:visited {
 .text-hover {
   color: white;
   display: inline;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
+  -webkit-transition-timing-function: cubic-bezier(0.65, 0, 0.076, 1);
+  transition-timing-function: cubic-bezier(0.65, 0, 0.076, 1);
+  -webkit-transition-duration: 0.45s;
+  transition-duration: 0.45s;
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
   -webkit-transition-property: color;
@@ -107,10 +110,10 @@ nav ul li a:visited {
   -webkit-tap-highlight-color: transparent;
 }
 .text-hover:after {
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.45s;
+  transition-duration: 0.45s;
+  -webkit-transition-timing-function: cubic-bezier(0.65, 0, 0.076, 1);
+  transition-timing-function: cubic-bezier(0.65, 0, 0.076, 1);
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
 }
@@ -123,18 +126,18 @@ nav ul li a:visited {
   outline: 0;
   cursor: pointer;
   color: #fc7753;
-  -webkit-transition: color 0.3s ease-in-out;
-  transition: color 0.3s ease-in-out;
+  -webkit-transition: color 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: color 0.45s cubic-bezier(0.65, 0, 0.076, 1);
 }
 .text-hover:active {
   z-index: 0;
 }
 .text-hover:focus:after,
 .text-hover:hover:after {
-  -webkit-transition-duration: 0.3s;
-  transition-duration: 0.3s;
-  -webkit-transition-timing-function: ease-in-out;
-  transition-timing-function: ease-in-out;
+  -webkit-transition-duration: 0.45s;
+  transition-duration: 0.45s;
+  -webkit-transition-timing-function: cubic-bezier(0.65, 0, 0.076, 1);
+  transition-timing-function: cubic-bezier(0.65, 0, 0.076, 1);
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
 }
@@ -190,10 +193,10 @@ nav ul li a:visited {
   }
   nav ul li {
     float: none;
+    margin: 20px 0;
+    padding: 0 15px;
   }
   nav ul li a {
-    margin: 30px 0;
-    padding: 0 15px;
     line-height: 20px;
     color: #00335d !important;
   }
@@ -255,4 +258,88 @@ nav ul li a:visited {
   bottom: 0px;
   transform: rotate(-45deg);
   background-color: #00335d;
+}
+
+/* Learn More Button */
+button {
+  margin-top: 40px;
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  outline: none;
+  border: 0;
+  vertical-align: middle;
+  text-decoration: none;
+  background: transparent;
+  padding: 0;
+  font-size: 17px;
+  -webkit-font-smoothing: antialiased;
+  font-family: "Roboto", sans-serif;
+}
+button.learn-more {
+  width: 12rem;
+  height: auto;
+}
+button.learn-more .circle {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: relative;
+  display: block;
+  margin: 0;
+  width: 3rem;
+  height: 3rem;
+  background: #fc7753;
+  border-radius: 1.625rem;
+}
+button.learn-more .circle .icon {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: #00335d;
+}
+button.learn-more .circle .icon.arrow {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  left: 0.625rem;
+  width: 1.125rem;
+  height: 0.125rem;
+  background: none;
+}
+button.learn-more .circle .icon.arrow::before {
+  position: absolute;
+  content: '';
+  top: -0.25rem;
+  right: 0.0625rem;
+  width: 0.625rem;
+  height: 0.625rem;
+  border-top: 0.125rem solid #00335d;
+  border-right: 0.125rem solid #00335d;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+button.learn-more .button-text {
+  transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0.75rem 0;
+  margin: 0 0 0 1.85rem;
+  color: #fc7753;
+  font-weight: 700;
+  line-height: 1.6;
+  text-align: center;
+  text-transform: uppercase;
+}
+button:hover .circle {
+  width: 100%;
+}
+button:hover .circle .icon.arrow {
+  background: #00335d;
+  -webkit-transform: translate(1rem, 0);
+          transform: translate(1rem, 0);
+}
+button:hover .button-text {
+  color: #00335d;
 }
