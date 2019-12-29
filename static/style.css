@@ -7,10 +7,16 @@
 }
 
 #home .disappear {
-  transform: translateY(-200px);
+  transform: translateY(-40%);
   opacity: 0 !important;
-  transition: all 0.8s ease-in-out !important;
+  transition: all .8s ease-in-out !important;
 }
+
+.disappearBg {
+  transform: translateY(-20%);
+  transition: all 1s ease-in-out !important;
+}
+
 
 .center-page {
   position: absolute;
@@ -22,7 +28,7 @@
   margin: auto;
   text-align: center;
   color: #fff;
-  transition: all 0.5s ease-in-out;
+  transition: all .5s ease-in-out;
   -webkit-font-smoothing: antialiased;
   opacity: 0;
 }

@@ -20,36 +20,42 @@ $(document).ready(() => {
 
   // Homepage animation on click
   homeDisappear = () => {
-    $('#header').addClass('disappear');
-      if ($("body").width() > 769) {
-        $('.navigation').addClass('disappear');
-      }
-  }
+    $("#home").addClass("disappearBg");
+    $("#header").addClass("disappear");
+    if ($("body").width() > 769) {
+      $(".navigation").addClass("disappear");
+    }
+  };
   homeAppear = () => {
+    $("#home").removeClass("disappearBg");
     setTimeout(() => {
-      $('#header').removeClass('disappear');
+      $("#header").removeClass("disappear");
       if ($("body").width() > 769) {
-        $('.navigation').removeClass('disappear');
+        $(".navigation").removeClass("disappear");
       }
-    }, 100);
-  }
-  $(".text-hover,.learn-more").click(function(){
+    }, 150);
+  };
+  $(".text-hover,.learn-more").click(function() {
     homeDisappear();
   });
-  $("#home-btn-nav").click(function(){
+  $("#home-btn-nav").click(function() {
     homeAppear();
   });
 
   // Homepage scroll animation
   animateHome = (e, currentPage) => {
-    if (e.originalEvent.wheelDelta < 0 && currentPage == 'home') {
+    if (e.originalEvent.wheelDelta < 0 && currentPage == "home") {
       homeDisappear();
-    } else if (e.originalEvent.wheelDelta > 0 && currentPage == 'about') {
+    } else if (e.originalEvent.wheelDelta > 0 && currentPage == "about") {
       homeAppear();
     }
-  }
-  $("#home").bind("mousewheel", (e) => { animateHome(e, 'home') });
-  $("#about-section").bind("mousewheel", (e) => { animateHome(e, 'about') });
+  };
+  $("#home").bind("mousewheel", e => {
+    animateHome(e, "home");
+  });
+  $("#about-section").bind("mousewheel", e => {
+    animateHome(e, "about");
+  });
 
   // Enable fullpage.js
   $("#fullpage").fullpage({
@@ -58,7 +64,7 @@ $(document).ready(() => {
     autoScrolling: true,
     scrollHorizontally: false,
     sectionsColor: ["#FC7753", "grey", "blue", "blue"],
-    scrollingSpeed: 1200,
+    scrollingSpeed: 1500
   });
   $.fn.fullpage.setAllowScrolling(true);
 });
