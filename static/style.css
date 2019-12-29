@@ -14,9 +14,12 @@
 
 .center-page {
   position: absolute;
-  top: 25vh;
+  top: 0;
+  bottom: 0;
   left: 0;
   right: 0;
+  height: fit-content;
+  margin: auto;
   text-align: center;
   color: #fff;
   transition: all 0.5s ease-in-out;
@@ -26,25 +29,36 @@
 
 #home #title {
   font-family: "DM Serif Text", serif;
-  font-size: 130px;
+  font-size: 8vw;
+  line-height: 10vw;
 }
 
 #home #subtitle {
   font-family: "Roboto", sans-serif;
-  font-size: 32px;
+  font-size: 2vw;
   margin: 0 auto;
 }
 
-@media (max-width: 769px) {
-  .center-page{
-    top: 17vh;
-  }
+@media (max-width: 950px) {
   #home #title {
-    font-size: 12vw;
+    font-size: 9vw;
+    line-height: 10vw;
   }
   #home #subtitle {
-    font-size: 7vw;
-    max-width: 80%;
+    font-size: 3vw;
+  }
+}
+
+@media (max-width: 600px) {
+  #home #title {
+    margin-top: -30px;
+    font-size: 15vw;
+    line-height: 16vw;
+  }
+  #home #subtitle {
+    margin-top: 30px;
+    font-size: 5.5vw;
+    max-width: 90%;
   }
 }
 .navigation {
