@@ -17,6 +17,14 @@
   transition: all 1s ease-in-out !important;
 }
 
+::selection {
+  color: #00335d;
+  background: white;
+}
+::-moz-selection {
+  color: #00335d;
+  background: white;
+}
 
 .center-page {
   position: absolute;
