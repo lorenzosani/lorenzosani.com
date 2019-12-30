@@ -6,6 +6,7 @@ height: 100vh;
 width: 100vw;
 background-image: linear-gradient(0deg, #00172a, #00335d 72%);
 z-index: 10000 !important;
+transition: all .5s ease-in-out;
 }
 
 .parallax {
@@ -19,7 +20,7 @@ z-index: 10000 !important;
 #home .disappear {
   transform: translateY(-40%);
   opacity: 0 !important;
-  transition: all .8s ease-in-out !important;
+  transition: all .7s ease-in-out !important;
 }
 
 .disappearBg {
@@ -46,9 +47,8 @@ z-index: 10000 !important;
   margin: auto;
   text-align: center;
   color: #fff;
-  transition: all .5s ease-in-out;
   -webkit-font-smoothing: antialiased;
-  opacity: 0;
+  transition: all .7s ease-in-out !important;
 }
 
 #home #title {
@@ -90,7 +90,6 @@ z-index: 10000 !important;
   font-family: "Roboto", sans-serif;
   height: 70px;
   background: transparent;
-  opacity: 0;
   transition: opacity 1s;
 }
 

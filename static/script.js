@@ -1,12 +1,9 @@
 $(document).ready(() => {
   // Hide splash screen
-  $("#loader").css("display", "none");
-  // Title animation
-  $("#header").css("opacity", "1");
-  $(".navigation").css("opacity", "1");
+  $("#loader").css("opacity", "0");
+  setTimeout(() => { $("#loader").css("display", "none") }, 500);
 
-  // Navbar toggle
-  // Toggle open and close nav styles on click
+  // Navbar toggle open and close nav styles on click
   $("#nav-toggle").click(function() {
     $("nav ul").slideToggle();
   });
@@ -23,19 +20,13 @@ $(document).ready(() => {
   // Homepage animation on click
   homeDisappear = () => {
     $("#home").addClass("disappearBg");
-    $("#header").addClass("disappear");
-    if ($("body").width() > 769) {
-      $(".navigation").addClass("disappear");
-    }
+    $("#header, .navigation").addClass("disappear");
   };
   homeAppear = () => {
     $("#home").removeClass("disappearBg");
     setTimeout(() => {
-      $("#header").removeClass("disappear");
-      if ($("body").width() > 769) {
-        $(".navigation").removeClass("disappear");
-      }
-    }, 150);
+      $("#header, .navigation").removeClass("disappear");
+    }, 100);
   };
   $(".text-hover,.learn-more").click(function() {
     homeDisappear();
