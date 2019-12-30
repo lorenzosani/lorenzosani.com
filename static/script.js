@@ -1,4 +1,6 @@
 $(document).ready(() => {
+  // Hide splash screen
+  $("#loader").css("display", "none");
   // Title animation
   $("#header").css("opacity", "1");
   $(".navigation").css("opacity", "1");
