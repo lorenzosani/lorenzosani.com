@@ -1,7 +1,9 @@
 $(document).ready(() => {
-  // Hide splash screen
+  // Hide splash screen and animate appearance
+  setTimeout(() => { $(".center-page").css("opacity", "100").css("top", "-10vh") }, 500);
   $("#loader").css("opacity", "0");
-  setTimeout(() => { $("#loader").css("display", "none") }, 500);
+  $("#loader").css("display", "none");
+  setTimeout(() => { $(".navigation").css("opacity", "100") }, 1200);
 
   // Navbar toggle open and close nav styles on click
   $("#nav-toggle").click(function() {
