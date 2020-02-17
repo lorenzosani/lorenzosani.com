@@ -9,7 +9,7 @@ $(document).ready(() => {
   setTimeout(() => { $(".center-page").css("opacity", "100").css("top", "-10vh") }, 500);
   $("#loader").css("opacity", "0");
   $("#loader").css("display", "none");
-  setTimeout(() => { $(".navigation").css("opacity", "100") }, 1200);
+  setTimeout(() => { $(".navigation, #scroll a span").css("opacity", "100") }, 1200);
 
   // Navbar toggle open and close nav styles on click
   $("#nav-toggle").click(function() {
@@ -36,7 +36,7 @@ $(document).ready(() => {
       $("#header, .navigation").removeClass("disappear");
     }, 100);
   };
-  $(".text-hover,.learn-more").click(function() {
+  $(".text-hover,.learn-more,#scroll").click(function() {
     homeDisappear();
   });
   $("#home-btn-nav").click(function() {

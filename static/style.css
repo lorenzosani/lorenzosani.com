@@ -52,40 +52,58 @@ transition: all .5s ease-in-out;
   transition: all .7s ease-in-out !important;
 }
 
-#home #title {
+#title {
   font-family: "DM Serif Text", serif;
   font-size: 7vw;
   line-height: 9vw;
 }
 
-#home #subtitle {
+#subtitle {
   font-family: "Roboto", sans-serif;
   font-size: 1.8vw;
   margin: 0 auto;
 }
 
 @media (max-width: 950px) {
-  #home #title {
+  #title {
     font-size: 9vw;
     line-height: 10vw;
   }
-  #home #subtitle {
+  #subtitle {
     font-size: 3vw;
+    max-width: 85%;
   }
 }
 
 @media (max-width: 600px) {
-  #home #title {
+  #title {
     margin-top: -30px;
     font-size: 15vw;
     line-height: 16vw;
   }
-  #home #subtitle {
+  #subtitle {
     margin-top: 30px;
     font-size: 5.5vw;
-    max-width: 90%;
+    max-width: 83%;
+  }
+  #scroll{
+    visibility:hidden;
+    display:none;
   }
 }
+
+.section-title{
+  position: absolute;
+  font-family: "DM Serif Text", serif;
+  font-size: 5vw;
+  top: 50px;
+  left: 50px;
+}
+
+.blue{
+  color: #00335d;
+}
+
 .navigation {
   opacity: 0;
   -webkit-font-smoothing: antialiased;
@@ -380,3 +398,65 @@ button:hover .circle .icon.arrow {
 button:hover .button-text {
   color: #00335d;
 }
+
+#scroll a {
+  padding-top: 60px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  z-index: 2;
+  display: inline-block;
+  -webkit-transform: translate(0, -50%);
+  transform: translate(0, -50%);
+  color: #fff;
+  font : normal 400 20px/1 'Josefin Sans', sans-serif;
+  letter-spacing: .1em;
+  text-decoration: none;
+}
+
+#scroll a span {
+  opacity:0;
+  transition: opacity 2s;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 32px;
+  height: 32px;
+  margin-left: -12px;
+  border-left: 1px solid #fff;
+  border-bottom: 1px solid #fff;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+  -webkit-animation: sdb04 2s infinite;
+  animation: sdb04 2s infinite;
+  box-sizing: border-box;
+}
+
+#scroll a span:hover{
+  border-left: 1px solid #fc7753;
+  border-bottom: 1px solid #fc7753;
+}
+
+@-webkit-keyframes sdb04 {
+  0% {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+  }
+  20% {
+    -webkit-transform: rotate(-45deg) translate(-10px, 10px);
+  }
+  40% {
+    -webkit-transform: rotate(-45deg) translate(0, 0);
+  }
+}
+@keyframes sdb04 {
+  0% {
+    transform: rotate(-45deg) translate(0, 0);
+  }
+  20% {
+    transform: rotate(-45deg) translate(-10px, 10px);
+  }
+  40% {
+    transform: rotate(-45deg) translate(0, 0);
+  }
+}
+
