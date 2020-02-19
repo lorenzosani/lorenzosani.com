@@ -460,3 +460,36 @@ button:hover .button-text {
   }
 }
 
+.image{
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+.image #back {
+  width: 33vw;
+  height: auto;
+  position:absolute;
+  bottom: -80px;
+  left: 0px;
+  z-index: 1;
+  transition: bottom 2s;
+}
+
+.image #front {
+  width: 40vw;
+  height: auto;
+  position:absolute;
+  bottom: -80px;
+  left: -80px;
+  opacity: 0;
+  z-index: 2;
+  transition: bottom 2s, opacity 1s;
+}
+
+@media (max-width: 600px) {
+  .image {
+    visibility: hidden;
+    display: none;
+  }
+}
