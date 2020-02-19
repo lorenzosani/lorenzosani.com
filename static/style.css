@@ -482,7 +482,6 @@ button:hover .button-text {
   position:absolute;
   bottom: -80px;
   left: -80px;
-  opacity: 0;
   z-index: 2;
   transition: bottom 2s, opacity 1s;
 }

@@ -30,11 +30,11 @@ $(document).ready(() => {
       $("#home").addClass("disappearBg");
       $("#header, .navigation").addClass("disappear");
       setTimeout(() => { $(".image #back").css("bottom", 0)}, 600);
-      setTimeout(() => { $(".image #front").css("bottom", 0).css("opacity", 100)}, 1000);
+      setTimeout(() => { $(".image #front").css("bottom", 0)}, 1000);
   };
   homeAppear = () => {
     $(".image #back").css("bottom", "-80px");
-    $(".image #front").css("bottom", "-80px").css("opacity", 0);
+    $(".image #front").css("bottom", "-80px");
     $("#home").removeClass("disappearBg");
     setTimeout(() => {
       $("#header, .navigation").removeClass("disappear");
