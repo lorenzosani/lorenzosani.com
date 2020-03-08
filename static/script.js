@@ -9,7 +9,7 @@ $(document).ready(() => {
   setTimeout(() => { $(".center-page").css("opacity", "100").css("top", "-10vh") }, 500);
   $("#loader").css("opacity", "0");
   $("#loader").css("display", "none");
-  setTimeout(() => { $(".navigation, #scroll a span").css("opacity", "100") }, 1200);
+  setTimeout(() => { $(".navigation, #scroll a span").css("opacity", "100") }, 2000);
 
   // Navbar toggle open and close nav styles on click
   $("#nav-toggle").click(function() {
@@ -29,11 +29,9 @@ $(document).ready(() => {
   homeDisappear = () => {
       $("#home").addClass("disappearBg");
       $("#header, .navigation").addClass("disappear");
-      setTimeout(() => { $(".image #back").css("bottom", 0)}, 600);
-      setTimeout(() => { $(".image #front").css("bottom", 0)}, 1000);
+      setTimeout(() => { $(".image #front").css("bottom", 0)},600);
   };
   homeAppear = () => {
-    $(".image #back").css("bottom", "-80px");
     $(".image #front").css("bottom", "-80px");
     $("#home").removeClass("disappearBg");
     setTimeout(() => {
@@ -78,7 +76,7 @@ $(document).ready(() => {
     anchors: sections,
     autoScrolling: true,
     scrollHorizontally: false,
-    sectionsColor: ["#FC7753", "grey", "blue", "blue"],
+    sectionsColor: ["#fc7753", "grey", "blue", "blue"],
     scrollingSpeed: 1500
   });
 });

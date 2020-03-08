@@ -59,8 +59,9 @@ transition: all .5s ease-in-out;
 }
 
 #subtitle {
-  font-family: "Roboto", sans-serif;
-  font-size: 1.8vw;
+  opacity: .8;
+  font-family: "Open Sans", sans-serif;
+  font-size: 1.4vw;
   margin: 0 auto;
 }
 
@@ -95,7 +96,7 @@ transition: all .5s ease-in-out;
 .section-title{
   position: absolute;
   font-family: "DM Serif Text", serif;
-  font-size: 5vw;
+  font-size: 7vw;
   top: 50px;
   left: 50px;
 }
@@ -107,7 +108,7 @@ transition: all .5s ease-in-out;
 .navigation {
   opacity: 0;
   -webkit-font-smoothing: antialiased;
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
   height: 70px;
   background: transparent;
   transition: opacity 1s;
@@ -124,7 +125,7 @@ nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  font-size:15px;
+  font-size:17px;
 }
 nav ul li {
   float: left;
@@ -132,7 +133,7 @@ nav ul li {
 }
 nav ul li a,
 nav ul li a:visited {
-  font-weight: bold;
+  opacity: .8;
   display: block;
   padding: 0 5px;
   margin: 0 25px;
@@ -177,20 +178,22 @@ nav ul li a:visited {
 }
 .text-hover:focus,
 .text-hover:hover {
+  opacity: 1;
   text-decoration: none;
   outline: 0;
   cursor: pointer;
   color: #fff;
-  -webkit-transition: color 0.45s cubic-bezier(0.65, 0, 0.076, 1);
-  transition: color 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+  -webkit-transition: color 0.3s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: color 0.3s cubic-bezier(0.65, 0, 0.076, 1);
 }
 .text-hover:active {
   z-index: 0;
 }
 .text-hover:focus:after,
 .text-hover:hover:after {
-  -webkit-transition-duration: 0.45s;
-  transition-duration: 0.45s;
+  opacity: 1;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
   -webkit-transition-timing-function: cubic-bezier(0.65, 0, 0.076, 1);
   transition-timing-function: cubic-bezier(0.65, 0, 0.076, 1);
   -webkit-transition-delay: 0s;
@@ -202,10 +205,11 @@ nav ul li a:visited {
   -webkit-transition-property: width, background-color;
   transition-property: width, background-color;
   width: 0;
-  height: 15%;
+  height: 10%;
 }
 .text-hover-linethrough-goes-right:focus:after,
 .text-hover-linethrough-goes-right:hover:after {
+  opacity: 1;
   outline: 0;
   -webkit-transition-property: width, background-color;
   transition-property: width, background-color;
@@ -329,7 +333,7 @@ button {
   padding: 0;
   font-size: 17px;
   -webkit-font-smoothing: antialiased;
-  font-family: "Roboto", sans-serif;
+  font-family: "Open Sans", sans-serif;
 }
 button.learn-more {
   width: 12rem;
@@ -467,10 +471,10 @@ button:hover .button-text {
 }
 
 .image #back {
-  width: 33vw;
+  width: 34vw;
   height: auto;
   position:absolute;
-  bottom: -80px;
+  bottom: 0px;
   left: 0px;
   z-index: 1;
   transition: bottom 2s;
@@ -480,10 +484,10 @@ button:hover .button-text {
   width: 40vw;
   height: auto;
   position:absolute;
-  bottom: -80px;
+  bottom: -60px;
   left: -80px;
   z-index: 2;
-  transition: bottom 2s, opacity 1s;
+  transition: bottom 1.5s, opacity 1s;
 }
 
 @media (max-width: 600px) {
@@ -491,4 +495,16 @@ button:hover .button-text {
     visibility: hidden;
     display: none;
   }
+}
+
+.about-text{
+  position: absolute;
+  top: 15vh;
+  padding: 5vw;
+  font-size: 1.4vw;
+}
+
+.right{
+  float: right;
+  width: 60vw;
 }
