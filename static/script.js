@@ -38,11 +38,8 @@ $(document).ready(() => {
       $("#header, .navigation").removeClass("disappear");
     }, 100);
   };
-  $(".text-hover,.learn-more,#scroll").click(function() {
+  $(".text-hover,.learn-more,#scroll").click(() => {
     homeDisappear();
-  });
-  $("#home-btn-nav").click(function() {
-    homeAppear();
   });
 
   // Scroll animation

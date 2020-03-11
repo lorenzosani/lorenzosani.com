@@ -1,7 +1,7 @@
 from django.db import models
 
 class AboutText(models.Model):
-    content = models.CharField(max_length=700)
+    content = models.TextField()
     def __str__(self):
         return self.content
     def save(self, *args, **kwargs):

@@ -102,8 +102,16 @@
   left: 50px;
 }
 
-.blue {
+.blue, .blue:hover {
   color: #00335d;
+}
+
+.blue:hover:after, .blue:active:after {
+  background-color: white !important;
+}
+
+.white, .white:hover {
+  color: white;
 }
 
 .navigation {
@@ -118,6 +126,14 @@
 
 .nav-container {
   margin: 0 auto;
+}
+
+.nav-about {
+  position: absolute;
+  right: 50px;
+  bottom: 50px;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 600;
 }
 
 nav {
@@ -141,12 +157,11 @@ nav ul li a:visited {
   margin: 0 25px;
   line-height: 70px;
   background: transparent;
-  color: white;
   text-decoration: none;
 }
 /* Text hover link animation */
 .text-hover {
-  color: #fee3dc;
+  opacity: .8;
   display: inline;
   -webkit-transition-timing-function: cubic-bezier(0.65, 0, 0.076, 1);
   transition-timing-function: cubic-bezier(0.65, 0, 0.076, 1);
@@ -154,8 +169,8 @@ nav ul li a:visited {
   transition-duration: 0.45s;
   -webkit-transition-delay: 0s;
   transition-delay: 0s;
-  -webkit-transition-property: color;
-  transition-property: color;
+  -webkit-transition-property: opacity;
+  transition-property: opacity;
   white-space: nowrap;
   overflow: hidden;
   position: relative;
@@ -184,9 +199,8 @@ nav ul li a:visited {
   text-decoration: none;
   outline: 0;
   cursor: pointer;
-  color: #fff;
-  -webkit-transition: color 0.3s cubic-bezier(0.65, 0, 0.076, 1);
-  transition: color 0.3s cubic-bezier(0.65, 0, 0.076, 1);
+  -webkit-transition: opacity 0.3s cubic-bezier(0.65, 0, 0.076, 1);
+  transition: opacity 0.3s cubic-bezier(0.65, 0, 0.076, 1);
 }
 .text-hover:active {
   z-index: 0;
@@ -221,10 +235,17 @@ nav ul li a:visited {
   left: 0;
   top: 50%;
 }
-#home-btn-nav {
+
+.nav-list .active {
   text-decoration: none;
   color: #fc7753;
 }
+
+.nav-list .white-active {
+  text-decoration: none;
+  color: white;
+}
+
 /* Mobile navigation */
 .nav-mobile {
   display: none;
@@ -499,10 +520,6 @@ button:hover .button-text {
   padding: 7vw;
   font-size: 1.4vw;
   font-weight: 400;
-}
-
-.about-text a {
-  color: #00335d;
 }
 
 .right {
