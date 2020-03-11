@@ -1,14 +1,14 @@
 {% load static %}
-<h1 class="section-title blue">About</h1>
+<h1 class="section-title blue" id="title">About</h1>
 <div class="image">
     <img id="front" src="{% static 'foto-contour.png' %}">
     <img id="back" src="{% static 'foto-bg.jpg' %}">
 </div>
-<div class="container right">
+<div class="right">
     <div class="about-text blue">
-        Open Sans was designed by Steve Matteson and comes in 10 different styles, from light to extra bold. The font itself is very simple, professional, and clean, yet it’s very exciting. It has many subtle characteristics such as the capital J with a descender that goes beyond the baseline.
-        <br/><br/>
-        Open Sans was designed by Steve Matteson and comes in 10 different styles, from light to extra bold. The font itself is very simple, professional, and clean, yet it’s very exciting. It has many subtle characteristics such as the capital J with a descender that goes beyond the baseline.
+        {% autoescape off %}
+        {{ about_text }}
+        {% endautoescape %}
     </div>
 </div>
 

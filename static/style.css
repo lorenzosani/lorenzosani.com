@@ -1,12 +1,12 @@
-#loader{
-position: absolute;
-left:0;
-top:0;
-height: 100vh;
-width: 100vw;
-background-image: linear-gradient(0deg, #00172a, #00335d 72%);
-z-index: 10000 !important;
-transition: all .5s ease-in-out;
+#loader {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(0deg, #00172a, #00335d 72%);
+  z-index: 10000 !important;
+  transition: all 0.5s ease-in-out;
 }
 
 .parallax {
@@ -20,7 +20,7 @@ transition: all .5s ease-in-out;
 #home .disappear {
   transform: translateY(-40%);
   opacity: 0 !important;
-  transition: all .7s ease-in-out !important;
+  transition: all 0.7s ease-in-out !important;
 }
 
 .disappearBg {
@@ -49,7 +49,7 @@ transition: all .5s ease-in-out;
   text-align: center;
   color: #fff;
   -webkit-font-smoothing: antialiased;
-  transition: all .7s ease-in-out !important;
+  transition: all 0.7s ease-in-out !important;
 }
 
 #title {
@@ -59,8 +59,9 @@ transition: all .5s ease-in-out;
 }
 
 #subtitle {
-  opacity: .8;
+  opacity: 0.8;
   font-family: "Open Sans", sans-serif;
+  font-weight: 400;
   font-size: 1.4vw;
   margin: 0 auto;
 }
@@ -87,13 +88,13 @@ transition: all .5s ease-in-out;
     font-size: 5.5vw;
     max-width: 83%;
   }
-  #scroll{
-    visibility:hidden;
-    display:none;
+  #scroll {
+    visibility: hidden;
+    display: none;
   }
 }
 
-.section-title{
+.section-title {
   position: absolute;
   font-family: "DM Serif Text", serif;
   font-size: 7vw;
@@ -101,7 +102,7 @@ transition: all .5s ease-in-out;
   left: 50px;
 }
 
-.blue{
+.blue {
   color: #00335d;
 }
 
@@ -109,6 +110,7 @@ transition: all .5s ease-in-out;
   opacity: 0;
   -webkit-font-smoothing: antialiased;
   font-family: "Open Sans", sans-serif;
+  font-weight: 600;
   height: 70px;
   background: transparent;
   transition: opacity 1s;
@@ -125,7 +127,7 @@ nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  font-size:17px;
+  font-size: 17px;
 }
 nav ul li {
   float: left;
@@ -133,7 +135,7 @@ nav ul li {
 }
 nav ul li a,
 nav ul li a:visited {
-  opacity: .8;
+  opacity: 0.8;
   display: block;
   padding: 0 5px;
   margin: 0 25px;
@@ -366,7 +368,7 @@ button.learn-more .circle .icon.arrow {
 }
 button.learn-more .circle .icon.arrow::before {
   position: absolute;
-  content: '';
+  content: "";
   top: -0.25rem;
   right: 0.0625rem;
   width: 0.625rem;
@@ -374,7 +376,7 @@ button.learn-more .circle .icon.arrow::before {
   border-top: 0.125rem solid #00335d;
   border-right: 0.125rem solid #00335d;
   -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 button.learn-more .button-text {
   transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
@@ -397,7 +399,7 @@ button:hover .circle {
 button:hover .circle .icon.arrow {
   background: #00335d;
   -webkit-transform: translate(1rem, 0);
-          transform: translate(1rem, 0);
+  transform: translate(1rem, 0);
 }
 button:hover .button-text {
   color: #00335d;
@@ -413,13 +415,13 @@ button:hover .button-text {
   -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
   color: #fff;
-  font : normal 400 20px/1 'Josefin Sans', sans-serif;
-  letter-spacing: .1em;
+  font: normal 400 20px/1 "Josefin Sans", sans-serif;
+  letter-spacing: 0.1em;
   text-decoration: none;
 }
 
 #scroll a span {
-  opacity:0;
+  opacity: 0;
   transition: opacity 2s;
   position: absolute;
   top: 0;
@@ -436,7 +438,7 @@ button:hover .button-text {
   box-sizing: border-box;
 }
 
-#scroll a span:hover{
+#scroll a span:hover {
   border-left: 1px solid #fc7753;
   border-bottom: 1px solid #fc7753;
 }
@@ -464,7 +466,7 @@ button:hover .button-text {
   }
 }
 
-.image{
+.image {
   position: absolute;
   bottom: 0px;
   left: 0px;
@@ -473,7 +475,7 @@ button:hover .button-text {
 .image #back {
   width: 34vw;
   height: auto;
-  position:absolute;
+  position: absolute;
   bottom: 0px;
   left: 0px;
   z-index: 1;
@@ -483,11 +485,29 @@ button:hover .button-text {
 .image #front {
   width: 40vw;
   height: auto;
-  position:absolute;
+  position: absolute;
   bottom: -60px;
   left: -80px;
   z-index: 2;
   transition: bottom 1.5s, opacity 1s;
+}
+
+.about-text {
+  font-family: "Open Sans", sans-serif;
+  position: absolute;
+  top: 7vh;
+  padding: 7vw;
+  font-size: 1.4vw;
+  font-weight: 400;
+}
+
+.about-text a {
+  color: #00335d;
+}
+
+.right {
+  float: right;
+  width: 65vw;
 }
 
 @media (max-width: 600px) {
@@ -495,16 +515,17 @@ button:hover .button-text {
     visibility: hidden;
     display: none;
   }
-}
-
-.about-text{
-  position: absolute;
-  top: 15vh;
-  padding: 5vw;
-  font-size: 1.4vw;
-}
-
-.right{
-  float: right;
-  width: 60vw;
+  .about-text {
+    font-size: 4.5vw;
+    top: 100px;
+    padding: 30px; 
+  }
+  .right{
+    float: left;
+    width: 100vw;
+  }
+  #about-section #title {
+    top: 80px;
+    left: 30px;
+  }
 }
