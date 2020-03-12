@@ -128,12 +128,14 @@
   margin: 0 auto;
 }
 
-.nav-about {
+#nav-about {
+  opacity: 0;
   position: absolute;
   right: 50px;
-  bottom: 50px;
+  bottom: 25px;
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
+  transition: all .7s ease-in-out !important;
 }
 
 nav {
@@ -518,7 +520,7 @@ button:hover .button-text {
   position: absolute;
   top: 7vh;
   padding: 7vw;
-  font-size: 1.4vw;
+  font-size: 2.5vh;
   font-weight: 400;
 }
 

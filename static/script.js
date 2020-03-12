@@ -25,7 +25,7 @@ $(document).ready(() => {
     this.classList.toggle("active");
   });
 
-  // Homepage animation on click
+  // Sections appear and disappear animation
   homeDisappear = () => {
       $("#home").addClass("disappearBg");
       $("#header, .navigation").addClass("disappear");
@@ -38,11 +38,16 @@ $(document).ready(() => {
       $("#header, .navigation").removeClass("disappear");
     }, 100);
   };
-  $(".text-hover,.learn-more,#scroll").click(() => {
-    homeDisappear();
-  });
+  aboutAppear = () => {
+    setTimeout(() => {
+      $("#nav-about").css("bottom", "50px").css("opacity", 1);
+    }, 1200);
+  }
+  aboutDisappear = () => {
+    $("#nav-about").css("bottom", "25px").css("opacity", 0);
+  }
 
-  // Scroll animation
+  // Mouse wheel scroll animation
   $("#home, #about-section, #projects-section, #contact-section").bind("mousewheel", e => {
     let d = new Date();
     if (d.getTime()-lastScroll > 1000){
@@ -53,16 +58,25 @@ $(document).ready(() => {
   });
   getScroll = (e, from) => {
     if (e.originalEvent.wheelDelta < 0) {
-      animateSection(from, sections[from["index"]+1])
+      animateSection(sections[from["index"]], sections[from["index"]+1]);
     } else if (e.originalEvent.wheelDelta > 0) {
-      animateSection(from, sections[from["index"]-1])
+      animateSection(sections[from["index"]], sections[from["index"]-1]);
     }
   }
+
+  // Animates transitions from one section to other
   animateSection = (from, to) => {
-    if (from["index"] == 0) {
+    // Home animation
+    if (from == "main") {
       homeDisappear();
     } else if (to == "main") {
       homeAppear();
+    }
+    // About animation
+    if (to == "about") {
+      aboutAppear();
+    } else if (from == "about") {
+      aboutDisappear();
     }
     fullpage_api.moveTo(to, 0);
   }  

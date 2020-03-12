@@ -15,9 +15,9 @@
         </div>
         <ul class="nav-list">
           <li><a href="" class="active text-hover text-hover-linethrough-goes-right white">Home</a></li>
-          <li><a href="#about" class="text-hover text-hover-linethrough-goes-right white">About</a></li>
-          <li><a href="#projects" class="text-hover text-hover-linethrough-goes-right white">Projects</a></li>
-          <li><a href="#contact" class="text-hover text-hover-linethrough-goes-right white">Contact</a></li>
+          <li><a href="#about" onclick="animateSection('main', 'about')" class="text-hover text-hover-linethrough-goes-right white">About</a></li>
+          <li><a href="#projects" onclick="animateSection('main', 'projects')" class="text-hover text-hover-linethrough-goes-right white">Projects</a></li>
+          <li><a href="#contact" onclick="animateSection('main', 'contact')" class="text-hover text-hover-linethrough-goes-right white">Contact</a></li>
           <li><a href="https://www.linkedin.com/in/lorenzo-sani/" target="_blank" class="white text-hover text-hover-linethrough-goes-right"><img src="{% static 'linkedin.png' %}" height="24px" width="24px"></a></li>
         </ul>
       </nav>
@@ -29,10 +29,10 @@
       Hello, Universe.
     </div>
     <div id="subtitle">
-      I'm Lorenzo! Sometimes I design, develop and build stuff. <br/><a href="#projects" class="white text-hover text-hover-linethrough-goes-right">Here</a> you can find some of the projects I've been working on.
+      I'm Lorenzo! Sometimes I design, develop and build stuff. <br/><a href="#projects" onclick="animateSection('main', 'projects')" class="white text-hover text-hover-linethrough-goes-right">Here</a> you can find some of the projects I've been working on.
     </div>
     <button class="learn-more">
-      <a href="#about">
+      <a href="#about" onclick="animateSection('main', 'about')">
       <span class="circle">
         <span class="icon arrow"></span>
       </span>
@@ -41,7 +41,7 @@
     </button>
   </div>
   <div id="scroll">
-    <a class="learn-more" href="#about"><span></span></a>
+    <a class="learn-more" href="#about" onclick="animateSection('main', 'projects')"><span></span></a>
   </div>
 </div>
 <div id="fullpage">
