@@ -20,7 +20,10 @@
       rel="stylesheet"
       crossorigin="anonymous"
     />
-    <link href="https://fonts.googleapis.com/css?family=DM+Serif+Text|Open+Sans:400,600&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=DM+Serif+Text|Open+Sans:400,600&display=swap"
+      rel="stylesheet"
+    />
     <link href="{% static 'style.css' %}" rel="stylesheet" />
     <link href="{% static 'stars.css' %}" rel="stylesheet" />
 
@@ -29,7 +32,7 @@
   <body style="background-color:#00335d">
     {% block content %} {% endblock %}
   </body>
-  
+
   <!-- SCRIPTS -->
   <script
     src="https://code.jquery.com/jquery-3.4.1.min.js"
@@ -45,5 +48,5 @@
     crossorigin="anonymous"
   ></script>
   <script src="{% static 'script.js' %}"></script>
-  <script src="{% static 'about.js' %}"></script>
+  <script src="{% static 'sections_load.js' %}"></script>
 </html>

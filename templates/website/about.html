@@ -1,28 +1,57 @@
 {% load static %}
-<h1 class="section-title blue" id="title">About</h1>
+<h1 class="title section-title blue">About</h1>
 <div class="image">
-    <img id="front" src="{% static 'foto-contour.png' %}">
-    <img id="back" src="{% static 'foto-bg.jpg' %}">
+  <img id="front" src="{% static 'foto-contour.png' %}" />
+  <img id="back" src="{% static 'foto-bg.jpg' %}" />
 </div>
 <div class="right">
-    <div class="about-text blue">
-        {% autoescape off %}
-        {{ about_text }}
-        {% endautoescape %}
-    </div>
+  <div class="blue text" id="about-text">
+    {% autoescape off %} {{ about_text }} {% endautoescape %}
+  </div>
 </div>
 <div class="nav-container" id="nav-about">
-    <nav>
-      <div class="nav-mobile">
-        <a id="nav-toggle" href="#!"><span></span></a>
-      </div>
-      <ul class="nav-list">
-        <li><a href="#main" onclick="homeAppear()" class="text-hover text-hover-linethrough-goes-right blue">Home</a></li>
-        <li><a href="#about" class="white-active text-hover text-hover-linethrough-goes-right blue">About</a></li>
-        <li><a href="#projects" class="text-hover text-hover-linethrough-goes-right blue">Projects</a></li>
-        <li><a href="#contact" class="text-hover text-hover-linethrough-goes-right blue">Contact</a></li>
-        <li><a href="https://www.linkedin.com/in/lorenzo-sani/" target="_blank" class="blue text-hover text-hover-linethrough-goes-right"><img src="{% static 'linkedin.png' %}" height="24px" width="24px"></a></li>
-      </ul>
-    </nav>
-  </div>
-
+  <nav>
+    <div class="nav-mobile">
+      <a id="nav-toggle" href="#!"><span></span></a>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a
+          href="#main"
+          onclick="animateSection('about', 'main')"
+          class="text-hover text-hover-linethrough-goes-right blue"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          href="#about"
+          class="white-active text-hover text-hover-linethrough-goes-right blue"
+          >About</a
+        >
+      </li>
+      <li>
+        <a
+          href="#projects"
+          class="text-hover text-hover-linethrough-goes-right blue"
+          >Projects</a
+        >
+      </li>
+      <li>
+        <a
+          href="#contact"
+          class="text-hover text-hover-linethrough-goes-right blue"
+          >Contact</a
+        >
+      </li>
+      <li>
+        <a
+          href="https://www.linkedin.com/in/lorenzo-sani/"
+          target="_blank"
+          class="blue text-hover text-hover-linethrough-goes-right"
+          ><img src="{% static 'linkedin.png' %}" height="24px" width="24px"
+        /></a>
+      </li>
+    </ul>
+  </nav>
+</div>

@@ -12,39 +12,43 @@ $(document).ready(() => {
   setTimeout(() => { $(".navigation, #scroll a span").css("opacity", "100") }, 2000);
 
   // Navbar toggle open and close nav styles on click
-  $("#nav-toggle").click(function() {
+  $("#nav-toggle").click(() => {
     $("nav ul").slideToggle();
   });
-  $("nav ul li a").click(function() {
+  $("nav ul li a").click(() => {
     if ($("body").width() <= 769) {
-      $("#nav-toggle").removeClass("active");
       $("nav ul").slideToggle();
+      $("#nav-toggle").removeClass("active");
     }
   });
-  $("#nav-toggle").on("click", function() {
-    this.classList.toggle("active");
+  $("#nav-toggle").on("click", () => {
+    $("#nav-toggle").addClass("active");
   });
 
   // Sections appear and disappear animation
   homeDisappear = () => {
       $("#home").addClass("disappearBg");
       $("#header, .navigation").addClass("disappear");
-      setTimeout(() => { $(".image #front").css("bottom", 0)},600);
   };
-  homeAppear = () => {
-    $(".image #front").css("bottom", "-80px");
+  homeAppear = () => {    
     $("#home").removeClass("disappearBg");
     setTimeout(() => {
       $("#header, .navigation").removeClass("disappear");
     }, 100);
   };
   aboutAppear = () => {
-    setTimeout(() => {
-      $("#nav-about").css("bottom", "50px").css("opacity", 1);
-    }, 1200);
+    setTimeout(() => { $(".image #front").css("bottom", 0) }, 600);
+    setTimeout(() => { $("#nav-about").css("bottom", "50px").css("opacity", 1); }, 1200);
   }
   aboutDisappear = () => {
+    $(".image #front").css("bottom", "-80px");
     $("#nav-about").css("bottom", "25px").css("opacity", 0);
+  }
+  projectsAppear = () => {
+    setTimeout(() => { $(".image #front").css("bottom", 0) }, 600);
+  }
+  projectsDisappear = () => {
+    $(".image #front").css("bottom", "-80px");
   }
 
   // Mouse wheel scroll animation
@@ -66,17 +70,26 @@ $(document).ready(() => {
 
   // Animates transitions from one section to other
   animateSection = (from, to) => {
+
     // Home animation
     if (from == "main") {
       homeDisappear();
     } else if (to == "main") {
       homeAppear();
     }
+
     // About animation
     if (to == "about") {
       aboutAppear();
     } else if (from == "about") {
       aboutDisappear();
+    }
+
+    // Projects animation
+    if(to == "projects") {
+      projectsAppear();
+    } else if (from == "projects") {
+      projectsDisappear();
     }
     fullpage_api.moveTo(to, 0);
   }  
@@ -87,7 +100,7 @@ $(document).ready(() => {
     anchors: sections,
     autoScrolling: true,
     scrollHorizontally: false,
-    sectionsColor: ["#fc7753", "grey", "blue", "blue"],
+    sectionsColor: ["#fc7753", "#00335d", "blue", "blue"],
     scrollingSpeed: 1500
   });
 });

@@ -12,3 +12,8 @@ def about(request):
     template = loader.get_template('website/about.html')
     content = AboutText.objects.all()
     return HttpResponse(template.render({ "about_text" : content[0].content }, request))
+
+def projects(request):
+    template = loader.get_template('website/projects.html')
+    content = AboutText.objects.all()
+    return HttpResponse(template.render({}, request))
