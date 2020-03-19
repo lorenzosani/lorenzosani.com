@@ -12,17 +12,20 @@ $(document).ready(() => {
   setTimeout(() => { $(".navigation, #scroll a span").css("opacity", "100") }, 2000);
 
   // Navbar toggle open and close nav styles on click
-  $("#nav-toggle").click(() => {
-    $("nav ul").slideToggle();
-  });
-  $("nav ul li a").click(() => {
-    if ($("body").width() <= 769) {
-      $("nav ul").slideToggle();
-      $("#nav-toggle").removeClass("active");
+  let nav = $(".nav-toggle");
+  nav.click(() => {
+    $(".nav-list").slideToggle();
+    if (nav.hasClass("active")) {
+      nav.removeClass("active");
+    } else {
+      nav.addClass("active");
     }
   });
-  $("#nav-toggle").on("click", () => {
-    $("#nav-toggle").addClass("active");
+  $(".nav-list li a").click(() => {
+    if ($("body").width() <= 769) {
+      $("nav ul").slideToggle();
+      $(".nav-toggle").removeClass("active");
+    }
   });
 
   // Sections appear and disappear animation

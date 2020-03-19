@@ -1,4 +1,31 @@
 {% load static %}
+<div class="nav-container sticky-top" id="nav-standard">
+  <nav>
+    <div class="nav-mobile">
+      <a class="nav-toggle" href="#!"><span></span></a>
+    </div>
+    <ul class="nav-list">
+      <li>
+        <a href="#main" onclick="animateSection('about', 'main')"
+          class="text-hover text-hover-linethrough-goes-right blue">Home</a>
+      </li>
+      <li>
+        <a href="#!" class="white-active text-hover text-hover-linethrough-goes-right blue">About</a>
+      </li>
+      <li>
+        <a href="#projects" onclick="animateSection('about', 'projects')" class="text-hover text-hover-linethrough-goes-right blue">Projects</a>
+      </li>
+      <li>
+        <a href="#contact" onclick="animateSection('about', 'contact')" class="text-hover text-hover-linethrough-goes-right blue">Contact</a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/lorenzo-sani/" target="_blank"
+          class="blue text-hover text-hover-linethrough-goes-right"><img src="{% static 'linkedin.png' %}" height="24px"
+            width="24px" /></a>
+      </li>
+    </ul>
+  </nav>
+</div>
 <h1 class="title section-title blue">About</h1>
 <div class="image">
   <img id="front" src="{% static 'foto-contour.png' %}" />
@@ -16,41 +43,22 @@
     </div>
     <ul class="nav-list">
       <li>
-        <a
-          href="#main"
-          onclick="animateSection('about', 'main')"
-          class="text-hover text-hover-linethrough-goes-right blue"
-          >Home</a
-        >
+        <a href="#main" onclick="animateSection('about', 'main')"
+          class="text-hover text-hover-linethrough-goes-right blue">Home</a>
       </li>
       <li>
-        <a
-          href="#about"
-          class="white-active text-hover text-hover-linethrough-goes-right blue"
-          >About</a
-        >
+        <a href="#!" class="white-active text-hover text-hover-linethrough-goes-right blue">About</a>
       </li>
       <li>
-        <a
-          href="#projects"
-          class="text-hover text-hover-linethrough-goes-right blue"
-          >Projects</a
-        >
+        <a href="#projects" onclick="animateSection('about', 'projects')" class="text-hover text-hover-linethrough-goes-right blue">Projects</a>
       </li>
       <li>
-        <a
-          href="#contact"
-          class="text-hover text-hover-linethrough-goes-right blue"
-          >Contact</a
-        >
+        <a href="#contact" onclick="animateSection('about', 'contact')" class="text-hover text-hover-linethrough-goes-right blue">Contact</a>
       </li>
       <li>
-        <a
-          href="https://www.linkedin.com/in/lorenzo-sani/"
-          target="_blank"
-          class="blue text-hover text-hover-linethrough-goes-right"
-          ><img src="{% static 'linkedin.png' %}" height="24px" width="24px"
-        /></a>
+        <a href="https://www.linkedin.com/in/lorenzo-sani/" target="_blank"
+          class="blue text-hover text-hover-linethrough-goes-right"><img src="{% static 'linkedin.png' %}" height="24px"
+            width="24px" /></a>
       </li>
     </ul>
   </nav>
