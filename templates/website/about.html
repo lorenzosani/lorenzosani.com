@@ -2,6 +2,43 @@
 <div class="nav-container sticky-top" id="nav-standard">
   <nav>
     <div class="nav-mobile">
+      <a class="nav-toggle" id="about-toggle" onclick="menuToggle()" href="#!"><span></span></a>
+    </div>
+    <ul class="nav-list" id="about-list">
+      <li>
+        <a href="#main" onclick="menuToggle(), animateSection('about', 'main')"
+          class="text-hover text-hover-linethrough-goes-right blue">Home</a>
+      </li>
+      <li>
+        <a href="#!" class="white-active text-hover text-hover-linethrough-goes-right blue">About</a>
+      </li>
+      <li>
+        <a href="#projects" onclick="menuToggle(), animateSection('about', 'projects')" class="text-hover text-hover-linethrough-goes-right blue">Projects</a>
+      </li>
+      <li>
+        <a href="#contact" onclick="menuToggle(), animateSection('about', 'contact')" class="text-hover text-hover-linethrough-goes-right blue">Contact</a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/lorenzo-sani/" target="_blank"
+          class="blue text-hover text-hover-linethrough-goes-right"><img src="{% static 'linkedin.png' %}" height="24px"
+            width="24px" /></a>
+      </li>
+    </ul>
+  </nav>
+</div>
+<h1 class="title section-title blue">About</h1>
+<div class="image">
+  <img id="front" src="{% static 'foto-contour.png' %}" />
+  <img id="back" src="{% static 'foto-bg.jpg' %}" />
+</div>
+<div class="right">
+  <div class="blue text" id="about-text">
+    {% autoescape off %} {{ about_text }} {% endautoescape %}
+  </div>
+</div>
+<div class="nav-container" id="nav-about">
+  <nav>
+    <div class="nav-mobile">
       <a class="nav-toggle" href="#!"><span></span></a>
     </div>
     <ul class="nav-list">
@@ -26,40 +63,79 @@
     </ul>
   </nav>
 </div>
-<h1 class="title section-title blue">About</h1>
-<div class="image">
-  <img id="front" src="{% static 'foto-contour.png' %}" />
-  <img id="back" src="{% static 'foto-bg.jpg' %}" />
-</div>
-<div class="right">
-  <div class="blue text" id="about-text">
-    {% autoescape off %} {{ about_text }} {% endautoescape %}
-  </div>
-</div>
-<div class="nav-container" id="nav-about">
-  <nav>
-    <div class="nav-mobile">
-      <a id="nav-toggle" href="#!"><span></span></a>
-    </div>
-    <ul class="nav-list">
-      <li>
-        <a href="#main" onclick="animateSection('about', 'main')"
-          class="text-hover text-hover-linethrough-goes-right blue">Home</a>
-      </li>
-      <li>
-        <a href="#!" class="white-active text-hover text-hover-linethrough-goes-right blue">About</a>
-      </li>
-      <li>
-        <a href="#projects" onclick="animateSection('about', 'projects')" class="text-hover text-hover-linethrough-goes-right blue">Projects</a>
-      </li>
-      <li>
-        <a href="#contact" onclick="animateSection('about', 'contact')" class="text-hover text-hover-linethrough-goes-right blue">Contact</a>
-      </li>
-      <li>
-        <a href="https://www.linkedin.com/in/lorenzo-sani/" target="_blank"
-          class="blue text-hover text-hover-linethrough-goes-right"><img src="{% static 'linkedin.png' %}" height="24px"
-            width="24px" /></a>
-      </li>
-    </ul>
-  </nav>
-</div>
+
+<script>
+  let nav = $("#about-toggle");
+  menuToggle = () => {
+    $("#about-list").slideToggle();
+    if (nav.hasClass("active")) {
+      nav.removeClass("active");
+    } else {
+      nav.addClass("active");
+    }
+  }
+
+  swipedetect = (el, callback) => {
+    let touchsurface = el,
+      swipedir,
+      startX,
+      startY,
+      distX,
+      distY,
+      threshold = 150, //required min distance traveled to be considered swipe
+      restraint = 100, // maximum distance allowed at the same time in perpendicular direction
+      allowedTime = 500, // maximum time allowed to travel that distance
+      elapsedTime,
+      startTime,
+      handleswipe = callback || function(swipedir) {};
+
+    touchsurface.addEventListener(
+      "touchstart",
+      e => {
+        let touchobj = e.changedTouches[0];
+        swipedir = "none";
+        dist = 0;
+        startX = touchobj.pageX;
+        startY = touchobj.pageY;
+        startTime = new Date().getTime(); // record time when finger first makes contact with surface
+        e.preventDefault();
+      },
+      false
+    );
+
+    touchsurface.addEventListener(
+      "touchend",
+      function(e) {
+        let touchobj = e.changedTouches[0];
+        distX = touchobj.pageX - startX; // get horizontal dist traveled by finger while in contact with surface
+        distY = touchobj.pageY - startY; // get vertical dist traveled by finger while in contact with surface
+        elapsedTime = new Date().getTime() - startTime; // get time elapsed
+        if (elapsedTime <= allowedTime) {
+          // first condition for awipe met
+          if (Math.abs(distX) >= threshold && Math.abs(distY) <= restraint) {
+            // 2nd condition for horizontal swipe met
+            swipedir = distX < 0 ? "left" : "right"; // if dist traveled is negative, it indicates left swipe
+          } else if (
+            Math.abs(distY) >= threshold &&
+            Math.abs(distX) <= restraint
+          ) {
+            // 2nd condition for vertical swipe met
+            swipedir = distY < 0 ? "up" : "down"; // if dist traveled is negative, it indicates up swipe
+          }
+        }
+        handleswipe(swipedir);
+        e.preventDefault();
+      },
+      false
+    );
+  };
+
+  let el = document.getElementById("about-text");
+  swipedetect(el, function(swipedir) {
+    if (swipedir == "down") {
+      animateSection("about","main");
+    } else if (swipedir == "up"){
+      animateSection("about","projects");
+    }
+  });
+</script>
