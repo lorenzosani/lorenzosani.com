@@ -4,9 +4,9 @@ $(document).ready(() => {
   let firstMove = true;
   let initialX, initialY;
   $("#home").mousemove(function(e) {
-    parallaxIt(e, "#home-back", 5);
-    parallaxIt(e, "#home-middle", 10);
-    parallaxIt(e, "#home-front", 20);
+    parallaxIt(e, "#home-back", 10);
+    parallaxIt(e, "#home-middle", 20);
+    parallaxIt(e, "#home-front", 30);
   });
   
   parallaxIt = (e, target, movement) => {
