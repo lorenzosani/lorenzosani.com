@@ -1,2 +1,26 @@
 {% load static %}
 <h1 class="title section-title orange">Projects</h1>
+<div class="center-page white padding-sides">
+    <button class="bubble" onclick="select('web-dev')" id="web-dev">WebDev</button>
+    <button class="bubble" onclick="select('mobile-dev')" id="mobile-dev">MobileDev</button>
+    <button class="bubble" onclick="select('game-dev')" id="game-dev">GameDev</button>
+    <button class="bubble" onclick="select('neuro-tech')" id="neuro-tech">NeuroTech</button>
+    <button class="bubble" onclick="select('machine-learning')" id="machine-learning">Machine Learning</button>
+    <button class="bubble" onclick="select('ui-ux-design')" id="ui-ux-design">UI/UX Design</button>
+    <button class="bubble" onclick="select('graphic-design')" id="graphic-design">Graphic Design</button>
+</div>
+<script>
+    let selected = {
+        "web-dev" : false,
+        "mobile-dev" : false,
+        "game-dev" : false,
+        "neuro-tech" : false,
+        "machine-learning" : false,
+        "ui-ux-design" : false,
+        "graphic-design" : false
+    }
+    select = (id) => {
+        selected[id] = !selected[id]
+        selected[id] ? document.getElementById(id).classList.add("bubble-active") : document.getElementById(id).classList.remove("bubble-active");
+    }
+</script>

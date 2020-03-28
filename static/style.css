@@ -398,7 +398,6 @@ button:hover .button-text {
   -webkit-transform: translate(0, -50%);
   transform: translate(0, -50%);
   color: #fff;
-  font: normal 400 20px/1 "Josefin Sans", sans-serif;
   letter-spacing: 0.1em;
   text-decoration: none;
 }
@@ -482,6 +481,29 @@ button:hover .button-text {
 
 #projects-section {
   z-index: 3;
+}
+
+.bubble{
+  opacity: .9;
+  width: fit-content;
+  background-color: white;
+  color: #00335d;
+  border-radius: 20px;
+  padding: 10px 20px;
+  margin: 10px 5px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 17px;
+  font-weight: bold;
+  transition: all .3s;
+}
+.bubble:hover, .bubble-active{
+  background-color: #fc7753;
+  color: white;
+  transition: all .3s;
+  opacity: 1;
+}
+.padding-sides{
+  padding: 0 15vw;
 }
 
 @media (max-width: 950px) {
