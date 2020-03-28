@@ -1,5 +1,26 @@
 $(document).ready(() => {
 
+  // Stars background to move with mouse
+  let firstMove = true;
+  let initialX, initialY;
+  $("#home").mousemove(function(e) {
+    parallaxIt(e, "#home-back", 5);
+    parallaxIt(e, "#home-middle", 10);
+    parallaxIt(e, "#home-front", 20);
+  });
+  
+  parallaxIt = (e, target, movement) => {
+    if (firstMove) {
+      firstMove = false;
+      initialX = e.pageX;
+      initialY = e.pageY;
+    }
+    var x = (initialX - e.pageX)/movement;
+    var y = (initialY - e.pageY)/movement;
+    var command = "translate(" + x + "px, " + y + "px)";
+    $(target).css("transform", command);
+  }
+
   let sections = ["main", "about", "projects", "contact"];
 
   let d = new Date();

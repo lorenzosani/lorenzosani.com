@@ -6,6 +6,11 @@
   transition: all 1s ease-in-out !important;
 }
 
+#home-back, #home-middle, #home-front {
+  position: absolute;
+  top: -100px;
+}
+
 #stars {
   opacity: .7;
   width: 1px;
