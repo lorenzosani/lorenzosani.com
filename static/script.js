@@ -72,23 +72,31 @@ $(document).ready(() => {
     }, 600);
     setTimeout(() => {
       $("#nav-about")
-        .css("bottom", "50px")
+        .css("bottom", "0")
         .css("opacity", 1);
     }, 1200);
   };
   aboutDisappear = () => {
     $(".image #front").css("bottom", "-80px");
     $("#nav-about")
-      .css("bottom", "25px")
+      .css("bottom", "-10px")
       .css("opacity", 0);
   };
   projectsAppear = () => {
     setTimeout(() => {
       $(".image #front").css("bottom", 0);
     }, 600);
+    setTimeout(() => {
+      $("#nav-projects")
+        .css("top", "0")
+        .css("opacity", 1);
+    }, 1200);
   };
   projectsDisappear = () => {
     $(".image #front").css("bottom", "-80px");
+    $("#nav-projects")
+      .css("top", "-10px")
+      .css("opacity", 0);
   };
 
   // Mouse wheel scroll animation

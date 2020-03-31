@@ -1,6 +1,34 @@
 {% load static %}
 <h1 class="title section-title orange">Projects</h1>
-<div class="center-page white padding-sides">
+<div class="nav-container" id="nav-projects">
+    <nav>
+        <div class="nav-mobile">
+        <a class="nav-toggle" href="#!"><span></span></a>
+        </div>
+        <ul class="nav-list">
+        <li>
+            <a href="#main" onclick="animateSection('projects', 'main')"
+            class="text-hover text-hover-linethrough-goes-right white">Home</a>
+        </li>
+        <li>
+            <a href="#about" onclick="animateSection('projects', 'about')" class="text-hover text-hover-linethrough-goes-right white">About</a>
+        </li>
+        <li>
+            <a href="#!" class="active text-hover text-hover-linethrough-goes-right orange">Projects</a>
+        </li>
+        <li>
+            <a href="#contact" onclick="animateSection('projects', 'contact')" class="text-hover text-hover-linethrough-goes-right white">Contact</a>
+        </li>
+        <li>
+            <a href="https://www.linkedin.com/in/lorenzo-sani/" target="_blank"
+            class="blue text-hover text-hover-linethrough-goes-right"><img src="{% static 'linkedin.png' %}" height="24px"
+                width="24px" /></a>
+        </li>
+        </ul>
+    </nav>
+</div>
+
+<div class="white padding-sides padding-top">
     <button class="bubble" onclick="select('web-dev')" id="web-dev">WebDev</button>
     <button class="bubble" onclick="select('mobile-dev')" id="mobile-dev">MobileDev</button>
     <button class="bubble" onclick="select('game-dev')" id="game-dev">GameDev</button>
@@ -8,7 +36,24 @@
     <button class="bubble" onclick="select('machine-learning')" id="machine-learning">Machine Learning</button>
     <button class="bubble" onclick="select('ui-ux-design')" id="ui-ux-design">UI/UX Design</button>
     <button class="bubble" onclick="select('graphic-design')" id="graphic-design">Graphic Design</button>
+    <div class="cards row">
+        <div class="card project-card">
+            <div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover;"></div>
+            <div class="card-body">
+                <p class="blue card-title">Project Title</p>
+                <p class="blue card-text">This is the project description of a nice project by me.</p>
+            </div>
+        </div>
+        <div class="card project-card">
+            <div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover;"></div>
+            <div class="card-body">
+                <p class="blue card-title">Project Title</p>
+                <p class="blue card-text">This is the project description of a nice project by me.</p>
+            </div>
+        </div>
+    </div>
 </div>
+
 <script>
     let selected = {
         "web-dev" : false,
