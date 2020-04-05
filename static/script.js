@@ -114,7 +114,7 @@ $(document).ready(() => {
   getScroll = (e, from) => {
     if (e.originalEvent.wheelDelta < 0) {
       animateSection(sections[from["index"]], sections[from["index"] + 1]);
-    } else if (e.originalEvent.wheelDelta > 0) {
+    } else if (e.originalEvent.wheelDelta > 0 && from["index"] > 0) {
       animateSection(sections[from["index"]], sections[from["index"] - 1]);
     }
   };
