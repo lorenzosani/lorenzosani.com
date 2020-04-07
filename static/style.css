@@ -498,7 +498,7 @@ button:hover .button-text {
 }
 
 .bubble{
-  opacity: .9;
+  opacity: .8;
   width: fit-content;
   background-color: white;
   color: #00335d;
@@ -508,15 +508,19 @@ button:hover .button-text {
   font-family: "Open Sans", sans-serif;
   font-size: 1vw;
   font-weight: bold;
-  transition: all .3s;
+  transition: all .2s;
 }
 
-.bubble:hover, .bubble-active{
+.bubble:hover{
+  opacity:1;
+}
+
+.bubble-active{
   background-color: #fc7753;
   box-shadow: 0px 1px 8px #fc785394;
   font-weight: bold;
   color: white;
-  transition: all .3s;
+  transition: all .2s;
   opacity: 1;
 }
 
@@ -569,6 +573,10 @@ button:hover .button-text {
   font-family: "Open Sans", sans-serif;
   font-size: 0.8vw;
   text-align: start;
+}
+
+.p-hide{
+  display: none;
 }
 
 @media (max-width: 950px) {
@@ -668,5 +676,26 @@ button:hover .button-text {
   #nav-about {
     display: none;
     visibility: hidden;
+  }
+  .bubble{
+    font-size: 4vw;
+  }
+  .p-hide{
+    display: block;
+  }
+  .cards{
+    display: none;
+    width: 10000px;;
+  }
+  .project-card{
+    width: 70vw;
+    height: 70vh;
+    margin-top: -5h;
+  }
+  .card-title{
+    font-size: 4vw;
+  }
+  .card-text{
+    font-size: 3vw;
   }
 }

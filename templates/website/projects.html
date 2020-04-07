@@ -29,6 +29,9 @@
 </div>
 
 <div class="white padding-sides padding-top">
+    <div class="text mb-4 p-hide" style="font-size: 4.5vw;">
+        Filter projects by category
+    </div>
     <button class="bubble" onclick="select('web-dev')" id="web-dev">WebDev</button>
     <button class="bubble" onclick="select('mobile-dev')" id="mobile-dev">MobileDev</button>
     <button class="bubble" onclick="select('game-dev')" id="game-dev">GameDev</button>
@@ -36,6 +39,15 @@
     <button class="bubble" onclick="select('machine-learning')" id="machine-learning">Machine Learning</button>
     <button class="bubble" onclick="select('ui-ux-design')" id="ui-ux-design">UI/UX Design</button>
     <button class="bubble" onclick="select('graphic-design')" id="graphic-design">Graphic Design</button>
+    <button class="learn-more p-hide">
+        <a href="#!" onclick="showProjects()">
+            <span class="circle">
+                <span class="icon arrow"></span>
+            </span>
+            <span class="button-text orange">See Projects</span>
+        </a>
+    </button>
+
     <div class="cards row">
         <div class="card project-card">
             <div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover;"></div>
@@ -55,17 +67,24 @@
 </div>
 
 <script>
-    let selected = {
-        "web-dev" : false,
-        "mobile-dev" : false,
-        "game-dev" : false,
-        "neuro-tech" : false,
-        "machine-learning" : false,
-        "ui-ux-design" : false,
-        "graphic-design" : false
-    }
-    select = (id) => {
-        selected[id] = !selected[id]
-        selected[id] ? document.getElementById(id).classList.add("bubble-active") : document.getElementById(id).classList.remove("bubble-active");
-    }
+    $(document).ready(() => {
+        let selected = {
+            "web-dev" : false,
+            "mobile-dev" : false,
+            "game-dev" : false,
+            "neuro-tech" : false,
+            "machine-learning" : false,
+            "ui-ux-design" : false,
+            "graphic-design" : false
+        }
+        select = (id) => {
+            selected[id] = !selected[id]
+            selected[id] ? document.getElementById(id).classList.add("bubble-active") : document.getElementById(id).classList.remove("bubble-active");
+        }
+        showProjects = () => {
+            console.log("Show Projects");
+            $(".p-hide, .bubble").hide();
+            $(".cards").css("display", "flex");
+        }
+    });
 </script>
