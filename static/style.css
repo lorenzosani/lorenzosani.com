@@ -46,7 +46,6 @@
   height: fit-content;
   margin: auto;
   text-align: center;
-  -webkit-font-smoothing: antialiased;
   transition: all 0.7s ease-in-out !important;
 }
 
@@ -54,17 +53,20 @@
   font-family: "DM Serif Text", serif;
   font-size: 7vw;
   line-height: 9vw;
+  -webkit-font-smoothing: antialiased;
 }
 
 .text {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
+  -webkit-font-smoothing: antialiased;
 }
 
 #subtitle-text {
   font-size: 1.4vw;
   margin: 0 auto;
   opacity: 0.8;
+  -webkit-font-smoothing: antialiased;
 }
 
 #about-text {
@@ -72,12 +74,14 @@
   top: 7vh;
   padding: 7vw;
   font-size: 3vh;
+  -webkit-font-smoothing: antialiased;
 }
 
 .section-title {
   position: absolute;
   top: 50px;
   left: 50px;
+  -webkit-font-smoothing: antialiased;
 }
 
 .blue, .blue:hover {

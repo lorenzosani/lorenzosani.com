@@ -5,8 +5,8 @@ $(document).ready(() => {
   let initialX, initialY;
   $("#home").mousemove(function(e) {
     parallaxIt(e, "#home-back", 10);
-    parallaxIt(e, "#home-middle", 20);
-    parallaxIt(e, "#home-front", 30);
+    parallaxIt(e, "#home-middle", 30);
+    parallaxIt(e, "#home-front", 20);
   });
   
   parallaxIt = (e, target, movement) => {
@@ -18,7 +18,9 @@ $(document).ready(() => {
     var x = (initialX - e.pageX)/movement;
     var y = (initialY - e.pageY)/movement;
     var command = "translate(" + x + "px, " + y + "px)";
-    $(target).css("transform", command);
+    setTimeout(() => {
+      $(target).css("transform", command);
+    }, 50);
   }
 
   let sections = ["main", "about", "projects", "contact"];
@@ -58,12 +60,12 @@ $(document).ready(() => {
   // Sections appear and disappear animation
   homeDisappear = () => {
     $("#home").addClass("disappearBg");
-    $("#header, .navigation").addClass("disappear");
+    $("#header").addClass("disappear");
   };
   homeAppear = () => {
     $("#home").removeClass("disappearBg");
     setTimeout(() => {
-      $("#header, .navigation").removeClass("disappear");
+      $("#header").removeClass("disappear");
     }, 100);
   };
   aboutAppear = () => {
