@@ -1,32 +1,32 @@
 {% load static %}
-<h1 class="title section-title orange">Projects</h1>
-<div class="nav-container" id="nav-projects">
-    <nav>
+<div class="nav-container sticky-top" id="nav-standard">
+    <nav id="nav-projects">
         <div class="nav-mobile">
-        <a class="nav-toggle" href="#!"><span></span></a>
+            <a class="nav-toggle" id="projects-toggle" onclick="menuToggle('projects')" href="#!"><span></span></a>
         </div>
-        <ul class="nav-list">
-        <li>
-            <a href="#main" onclick="animateSection('projects', 'main')"
-            class="text-hover text-hover-linethrough-goes-right white">Home</a>
-        </li>
-        <li>
-            <a href="#about" onclick="animateSection('projects', 'about')" class="text-hover text-hover-linethrough-goes-right white">About</a>
-        </li>
-        <li>
-            <a href="#!" class="active text-hover text-hover-linethrough-goes-right orange">Projects</a>
-        </li>
-        <li>
-            <a href="#contact" onclick="animateSection('projects', 'contact')" class="text-hover text-hover-linethrough-goes-right white">Contact</a>
-        </li>
-        <li>
-            <a href="https://www.linkedin.com/in/lorenzo-sani/" target="_blank"
-            class="blue text-hover text-hover-linethrough-goes-right"><img src="{% static 'linkedin.png' %}" height="24px"
-                width="24px" /></a>
-        </li>
+        <ul class="nav-list" id="projects-list">
+            <li>
+                <a href="#main" onclick="menuToggle('projects'), animateSection('projects', 'main')"
+                class="text-hover text-hover-linethrough-goes-right white">Home</a>
+            </li>
+            <li>
+                <a href="#about" onclick="menuToggle('projects'), animateSection('projects', 'about')" class="text-hover text-hover-linethrough-goes-right white">About</a>
+            </li>
+            <li>
+                <a href="#!" class="active text-hover text-hover-linethrough-goes-right orange">Projects</a>
+            </li>
+            <li>
+                <a href="#contact" onclick="menuToggle('projects'), animateSection('projects', 'contact')" class="text-hover text-hover-linethrough-goes-right white">Contact</a>
+            </li>
+            <li>
+                <a href="https://www.linkedin.com/in/lorenzo-sani/" target="_blank"
+                class="blue text-hover text-hover-linethrough-goes-right"><img src="{% static 'linkedin.png' %}" height="24px"
+                    width="24px" /></a>
+            </li>
         </ul>
     </nav>
 </div>
+<h1 class="title section-title orange">Projects</h1>
 
 <div class="white padding-sides padding-top">
     <div class="text mb-4 p-hide" style="font-size: 4.5vw;">

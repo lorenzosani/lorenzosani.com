@@ -2,21 +2,21 @@
 <div class="nav-container sticky-top" id="nav-standard">
   <nav>
     <div class="nav-mobile">
-      <a class="nav-toggle" id="about-toggle" onclick="menuToggle()" href="#!"><span></span></a>
+      <a class="nav-toggle" id="about-toggle" onclick="menuToggle('about')" href="#!"><span></span></a>
     </div>
     <ul class="nav-list" id="about-list">
       <li>
-        <a href="#main" onclick="menuToggle(), animateSection('about', 'main')"
+        <a href="#main" onclick="menuToggle('about'), animateSection('about', 'main')"
           class="text-hover text-hover-linethrough-goes-right blue">Home</a>
       </li>
       <li>
         <a href="#!" class="white-active text-hover text-hover-linethrough-goes-right blue">About</a>
       </li>
       <li>
-        <a href="#projects" onclick="menuToggle(), animateSection('about', 'projects')" class="text-hover text-hover-linethrough-goes-right blue">Projects</a>
+        <a href="#projects" onclick="menuToggle('about'), animateSection('about', 'projects')" class="text-hover text-hover-linethrough-goes-right blue">Projects</a>
       </li>
       <li>
-        <a href="#contact" onclick="menuToggle(), animateSection('about', 'contact')" class="text-hover text-hover-linethrough-goes-right blue">Contact</a>
+        <a href="#contact" onclick="menuToggle('about'), animateSection('about', 'contact')" class="text-hover text-hover-linethrough-goes-right blue">Contact</a>
       </li>
       <li>
         <a href="https://www.linkedin.com/in/lorenzo-sani/" target="_blank"
@@ -65,9 +65,9 @@
 </div>
 
 <script>
-  let nav = $("#about-toggle");
-  menuToggle = () => {
-    $("#about-list").slideToggle();
+  menuToggle = (section) => {
+    let nav = $(`#${section}-toggle`);
+    $(`#${section}-list`).slideToggle();
     if (nav.hasClass("active")) {
       nav.removeClass("active");
     } else {

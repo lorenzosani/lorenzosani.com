@@ -594,17 +594,61 @@ button:hover .button-text {
   }
 }
 
-@media screen and (min-width: 769px) {
-  .nav-list {
+@media (min-width: 767px) and (max-width: 769px) {
+  .nav-mobile {
     display: block;
   }
-  #nav-standard {
+  .nav-list {
+    z-index: 2000;
+  }
+  nav {
+    width: 100%;
+    padding: 0px 0 15px;
+  }
+  nav ul {
+    padding: 15vh 0;
+    text-align: center;
+    font-size: 5vh;
     display: none;
-    visibility: hidden;
+    background: #fc7753;
+    height: 100vh;
+  }
+  nav ul li {
+    float: none;
+    margin: 20px 0;
+    padding: 0 15px;
+  }
+  nav ul li a {
+    line-height: 20px;
+    color: #00335d !important;
+  }
+  nav ul li ul li a {
+    padding-left: 30px;
+  }
+  .nav-dropdown {
+    position: static;
+  }
+  .bubble{
+    font-size: 2vw;
+    padding: 10px 20px;
+  }
+  .cards{
+    width: 10000px;
+  }
+  .project-card{
+    width: 25vw;
+    height: 35vh;
+    margin-top: -2.5h;
+  }
+  .card-title{
+    font-size: 2vw;
+  }
+  .card-text{
+    font-size: 1.5vw;
   }
 }
 
-@media (max-width: 769px) {
+@media (max-width: 767px) {
   .title {
     margin-top: -30px;
     font-size: 15vw;
@@ -689,7 +733,7 @@ button:hover .button-text {
   }
   .cards{
     display: none;
-    width: 10000px;;
+    width: 10000px;
   }
   .project-card{
     width: 70vw;
