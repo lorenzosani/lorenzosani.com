@@ -615,10 +615,6 @@ button:hover .button-text {
     font-size: 5.5vw;
     max-width: 83%;
   }
-  #scroll {
-    visibility: hidden;
-    display: none;
-  }
   .image {
     visibility: hidden;
     display: none;
@@ -681,8 +677,12 @@ button:hover .button-text {
     display: none;
     visibility: hidden;
   }
+  .padding-top{
+    margin-top:25vh;
+  }
   .bubble{
     font-size: 4vw;
+    padding: 7.5px 15px;
   }
   .p-hide{
     display: block;
@@ -693,7 +693,7 @@ button:hover .button-text {
   }
   .project-card{
     width: 70vw;
-    height: 70vh;
+    height: 50vh;
     margin-top: -5h;
   }
   .card-title{
