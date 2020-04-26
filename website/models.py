@@ -8,3 +8,25 @@ class AboutText(models.Model):
         if not self.pk and AboutText.objects.exists():
             raise ValidationError('There can be only one About Text')
         return super(AboutText, self).save(*args, **kwargs)
+
+class ProjectTag(models.Model):
+    name = models.CharField(max_length=20)
+    def __str__(self):
+        return self.name
+
+class ProjectTechnology(models.Model):
+    name = models.CharField(max_length=20)
+    def __str__(self):
+        return self.name
+
+class Project(models.Model):
+    image = models.ImageField()
+    title = models.CharField(max_length=30, primary_key=True)
+    description = models.TextField(max_length=100)
+    long_description = models.TextField()
+    date_finished = models.DateField()
+    tags = models.ManyToManyField("ProjectTag")
+    technologies_used = models.ManyToManyField("ProjectTechnology")
+    def __str__(self):
+        return self.title
+
