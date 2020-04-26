@@ -20,13 +20,13 @@ class ProjectTechnology(models.Model):
         return self.name
 
 class Project(models.Model):
-    image = models.ImageField()
+    image = models.ImageField(upload_to ='static/')
     title = models.CharField(max_length=30, primary_key=True)
     description = models.TextField(max_length=100)
-    long_description = models.TextField()
+    long_description = models.TextField(blank=True)
     date_finished = models.DateField()
     tags = models.ManyToManyField("ProjectTag")
-    technologies_used = models.ManyToManyField("ProjectTechnology")
+    technologies_used = models.ManyToManyField("ProjectTechnology", blank=True)
     def __str__(self):
         return self.title
 

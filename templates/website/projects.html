@@ -49,20 +49,15 @@
     </button>
 
     <div class="cards row">
+    {% for project in projects %}
         <div class="card project-card">
-            <div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover;"></div>
+            <div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover; background-image: url({{ project.image.url }})"></div>
             <div class="card-body">
-                <p class="blue card-title">Project Title</p>
-                <p class="blue card-text">This is the project description of a nice project by me.</p>
+                <p class="blue card-title">{{ project.title }}</p>
+                <p class="blue card-text">{{ project.description }}</p>
             </div>
         </div>
-        <div class="card project-card">
-            <div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover;"></div>
-            <div class="card-body">
-                <p class="blue card-title">Project Title</p>
-                <p class="blue card-text">This is the project description of a nice project by me.</p>
-            </div>
-        </div>
+    {% endfor %}
     </div>
 </div>
 

@@ -1,8 +1,8 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, JsonResponse
 from django.template import loader
 from django.shortcuts import render
 
-from website.models import AboutText
+from website.models import AboutText, Project
 
 def index(request):
     template = loader.get_template('website/index.html')
@@ -15,5 +15,6 @@ def about(request):
 
 def projects(request):
     template = loader.get_template('website/projects.html')
-    content = AboutText.objects.all()
-    return HttpResponse(template.render({}, request))
+    projects = Project.objects.all()
+    context = { "projects" : projects }
+    return HttpResponse(template.render(context, request))
