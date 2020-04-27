@@ -1,4 +1,6 @@
 $(document).ready(() => {
+  // Redirect to main page
+  window.location.hash = '#main';
 
   // Stars background to move with mouse
   let firstMove = true;

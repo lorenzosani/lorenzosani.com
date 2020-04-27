@@ -48,21 +48,107 @@
         </a>
     </button>
 
-    <div class="cards row">
-    {% for project in projects %}
-        <div class="card project-card">
-            <div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover; background-image: url({{ project.image.url }})"></div>
-            <div class="card-body">
-                <p class="blue card-title">{{ project.title }}</p>
-                <p class="blue card-text">{{ project.description }}</p>
+<div id="projectsCarousel" class="carousel slide" data-ride="carousel">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <div class="cards row">
+            {% for project in projects|slice:"0:4" %}
+            <div class="col-md-3">
+                <div class="card project-card">
+                    <div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover; background-image: url({{ project.image.url }})"></div>
+                    <div class="card-body">
+                        <p class="blue card-title">{{ project.title }}</p>
+                        <p class="blue card-text">{{ project.description }}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
             </div>
         </div>
-    {% endfor %}
+        {% if projects|length > 4 %}
+        <div class="carousel-item">
+            <div class="cards row">
+                {% for project in projects|slice:"4:8" %}
+                <div class="col-3">
+                    <div class="card project-card">
+                        <div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover; background-image: url({{ project.image.url }})"></div>
+                        <div class="card-body">
+                            <p class="blue card-title">{{ project.title }}</p>
+                            <p class="blue card-text">{{ project.description }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        {% if projects|length > 8 %}
+        <div class="carousel-item">
+            <div class="cards row">
+                {% for project in projects|slice:"8:12" %}
+                <div class="col-3">
+                    <div class="card project-card">
+                        <div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover; background-image: url({{ project.image.url }})"></div>
+                        <div class="card-body">
+                            <p class="blue card-title">{{ project.title }}</p>
+                            <p class="blue card-text">{{ project.description }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        {% if projects|length > 12 %}
+        <div class="carousel-item">
+            <div class="cards row">
+                {% for project in projects|slice:"12:16" %}
+                <div class="col-3">
+                    <div class="card project-card">
+                        <div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover; background-image: url({{ project.image.url }})"></div>
+                        <div class="card-body">
+                            <p class="blue card-title">{{ project.title }}</p>
+                            <p class="blue card-text">{{ project.description }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        {% if projects|length > 16 %}
+        <div class="carousel-item">
+            <div class="cards row">
+                {% for project in projects|slice:"16:20" %}
+                <div class="col-3">
+                    <div class="card project-card">
+                        <div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover; background-image: url({{ project.image.url }})"></div>
+                        <div class="card-body">
+                            <p class="blue card-title">{{ project.title }}</p>
+                            <p class="blue card-text">{{ project.description }}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
     </div>
 </div>
+{% if projects|length > 4 %}
+<div id="project-scroll">
+    <a class="carousel-control-next" href="#!"><span id="project-scroll-next"></span></a>
+</div>
+<div id="project-scroll">
+    <a class="carousel-control-prev" href="#!"><span id="project-scroll-prev"></span></a>
+</div>
+{% endif %}
 
 <script>
     $(document).ready(() => {
+        let carousel = $('#projectsCarousel')
+        carousel.carousel('pause');
+
         let selected = {
             "web-dev" : false,
             "mobile-dev" : false,
@@ -77,9 +163,16 @@
             selected[id] ? document.getElementById(id).classList.add("bubble-active") : document.getElementById(id).classList.remove("bubble-active");
         }
         showProjects = () => {
-            console.log("Show Projects");
             $(".p-hide, .bubble").hide();
-            $(".cards").css("display", "flex");
+            $("#projectsCarousel").css("display", "flex");
         }
+        $(".carousel-control-prev").click((event) => {
+            event.preventDefault();
+            carousel.carousel('prev');
+        })
+        $(".carousel-control-next").click((event) => {
+            event.preventDefault();
+            carousel.carousel('next');
+        })
     });
 </script>
