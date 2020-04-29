@@ -147,8 +147,6 @@
 <script>
     $(document).ready(() => {
         let carousel = $('#projectsCarousel')
-        carousel.carousel('pause');
-
         let selected = {
             "web-dev" : false,
             "mobile-dev" : false,
@@ -158,21 +156,43 @@
             "ui-ux-design" : false,
             "graphic-design" : false
         }
+
+        carousel.carousel('pause');
+
         select = (id) => {
             selected[id] = !selected[id]
             selected[id] ? document.getElementById(id).classList.add("bubble-active") : document.getElementById(id).classList.remove("bubble-active");
+            filterProjects(selected);
         }
+
+        filterProjects = (filter) => {
+            $.ajax({
+                url: "/projects/filter",
+                data: filter,
+                dataType: 'text',
+                contentType: 'application/json; charset=utf-8',
+                success: response => {
+                    $("#projectsCarousel").html(response)
+                },
+                error: response => {
+                    console.log(response);
+                }
+            });
+        }
+
         showProjects = () => {
             $(".p-hide, .bubble").hide();
             $("#projectsCarousel").css("display", "flex");
         }
+
         $(".carousel-control-prev").click((event) => {
             event.preventDefault();
             carousel.carousel('prev');
-        })
+        });
+
         $(".carousel-control-next").click((event) => {
             event.preventDefault();
             carousel.carousel('next');
-        })
+        });
     });
 </script>
