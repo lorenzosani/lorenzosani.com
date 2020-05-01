@@ -39,7 +39,7 @@ $(document).ready(() => {
   $("#loader").css("opacity", "0");
   $("#loader").css("display", "none");
   setTimeout(() => {
-    $(".navigation, #scroll a span").css("opacity", "100");
+    $(".navigation, #scroll a span").css("opacity", "1");
   }, 2000);
 
   // Navbar toggle open and close nav styles on click

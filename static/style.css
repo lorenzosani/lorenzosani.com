@@ -71,9 +71,9 @@
 
 #about-text {
   position: absolute;
-  bottom: 8vh;
+  top: 8vh;
   padding: 8vw;
-  font-size: 3vh;
+  font-size: 1.4vw;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -111,28 +111,32 @@
 }
 
 nav {
-  float: right;
-  margin: 15px;
+  opacity: .7;
+  display: table;
+  margin: auto;
+  transition: opacity .3s;
+}
+
+nav:hover {
+  opacity: 1;
+  transition: opacity .3s;
 }
 
 nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  font-size: 1.25vw;
+  font-size: 1.1vw;
 }
 
 nav ul li {
   float: left;
   position: relative;
-}
-
-nav ul li a,
-nav ul li a:visited {
   opacity: 0.8;
   display: block;
   padding: 0 5px;
-  margin: 0 25px;
+  margin: 1vh 1.5vw;
+  font-weight: 700;
   line-height: 70px;
   background: transparent;
   text-decoration: none;
@@ -515,6 +519,7 @@ button:hover .button-text {
   left: 0px;
   z-index: 1;
   transition: bottom 2s;
+  opacity: .8;
 }
 
 .image #front {
@@ -722,7 +727,7 @@ button:hover .button-text {
     display: none;
   }
   #about-text {
-    font-size: 4.5vw;
+    font-size: 2.25vh;
     bottom:auto;
     top:100px;
     padding: 30px;
@@ -758,9 +763,7 @@ button:hover .button-text {
     float: none;
     margin: 20px 0;
     padding: 0 15px;
-  }
-  nav ul li a {
-    line-height: 20px;
+    line-height: 45px;
     color: #00335d !important;
   }
   nav ul li ul li a {
