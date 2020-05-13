@@ -482,6 +482,10 @@ button:hover .button-text {
   border-left: 1px solid #fc7753;
 }
 
+.back-to-selection{
+  display: none;
+}
+
 @-webkit-keyframes sdb04 {
   0% {
     -webkit-transform: rotate(-45deg) translate(0, 0);
@@ -580,6 +584,7 @@ button:hover .button-text {
 
 .padding-sides{
   padding: 0 15vw;
+  transition: all 1s;
 }
 
 .padding-top{
@@ -793,10 +798,38 @@ button:hover .button-text {
   #projectsCarousel{
     display: none;
   }
+  #project-scroll a{
+    display: none;
+    top: 20%;
+    transform: scale(0.6);
+  }
+  #project-scroll-prev {
+    left: 90vw;
+  }
+  .padding-sides{
+    padding: 0 2vw 0 10vw;
+  }
+  .cards .col-3{
+    max-width: 13% !important;
+    padding: 0 5px !important;
+  }
   .project-card{
-    width: 70vw;
+    opacity: 1;
+    width: 50vw;
     height: 50vh;
-    margin-top: -5h;
+    margin-top: -5vh;
+    box-shadow: -5px 2px 5px rgba(0, 51, 93, 0.4);
+    transition: all .4s ease-in-out;
+  }
+  .carousel-inner{
+    padding-top: 30px !important;
+  }
+  .project-card:hover{
+    z-index: 10;
+    margin-top: -5.5vh;
+    transform: scale(1.05);
+    box-shadow: 0px 2px 20px rgba(0, 51, 93, 0.8);
+    transition: all .4s ease-in-out;
   }
   .card-title{
     font-size: 4vw;

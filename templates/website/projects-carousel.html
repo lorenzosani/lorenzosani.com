@@ -2,7 +2,7 @@
 	<div class="carousel-item active">
 		<div class="cards row">
 		{% for project in projects|slice:"0:4" %}
-		<div class="col-md-3">
+		<div class="col-3">
 			<div class="card project-card">
 				<div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover; background-image: url({{ project.image.url }})"></div>
 				<div class="card-body">
@@ -83,3 +83,10 @@
 	</div>
 	{% endif %}
 </div>
+
+<script>
+    $(document).ready(() => {
+		let carousel = $('#projectsCarousel');
+		carousel.carousel('pause');
+	});
+</script>

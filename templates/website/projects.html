@@ -52,7 +52,7 @@
         <div class="carousel-item active">
             <div class="cards row">
             {% for project in projects|slice:"0:4" %}
-            <div class="col-md-3">
+            <div class="col-3">
                 <div class="card project-card">
                     <div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover; background-image: url({{ project.image.url }})"></div>
                     <div class="card-body">
@@ -141,11 +141,20 @@
 <div id="project-scroll">
     <a class="carousel-control-prev" href="#!"><span id="project-scroll-prev"></span></a>
 </div>
+
+<button class="learn-more back-to-selection">
+    <a href="#!" onclick="showSelection()">
+        <span class="circle">
+            <span class="icon arrow"></span>
+        </span>
+        <span class="button-text orange" style="">See filters</span>
+    </a>
+</button>
 {% endif %}
 
 <script>
     $(document).ready(() => {
-        let carousel = $('#projectsCarousel')
+        let carousel = $('#projectsCarousel');
         let selected = {
             "web-dev" : false,
             "mobile-dev" : false,
@@ -180,8 +189,32 @@
         }
 
         showProjects = () => {
-            $(".p-hide, .bubble").hide();
-            $("#projectsCarousel").css("display", "flex");
+            $(".padding-sides").css("margin-left", "400px");
+            $(".padding-sides").css("margin-right", "-400px");
+            $(".padding-sides").css("opacity", "0");
+            setTimeout(() => {
+                $(".p-hide, .bubble").css("display", "none");
+                $("#projectsCarousel").css("display", "flex");
+                $("#project-scroll a").css("display", "inline-block");
+                $(".back-to-selection").css("display", "block");
+                $(".padding-sides").css("margin-left", "0px");
+                $(".padding-sides").css("margin-right", "0px");
+                $(".padding-sides").css("opacity", "1");
+            }, 600);
+        }
+
+        showSelection = () => {
+            $(".padding-sides").css("margin-left", "400px");
+            $(".padding-sides").css("margin-right", "-400px");
+            $(".padding-sides").css("opacity", "0");
+            setTimeout(() => {
+                $("#projectsCarousel, #project-scroll a, .back-to-selection").css("display", "none");
+                $(".p-hide").css("display", "block");
+                $(".bubble").css("display", "inline-block");
+                $(".padding-sides").css("margin-left", "0px");
+                $(".padding-sides").css("margin-right", "0px");
+                $(".padding-sides").css("opacity", "1");
+            }, 600);
         }
 
         $(".carousel-control-prev").click((event) => {
