@@ -49,90 +49,124 @@
 
 <div id="projectsCarousel" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner">
-        <div class="carousel-item active">
-            <div class="cards row">
-            {% for project in projects|slice:"0:4" %}
-            <div class="col-3">
-                <div class="card project-card">
-                    <div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover; background-image: url({{ project.image.url }})"></div>
-                    <div class="card-body">
-                        <p class="blue card-title">{{ project.title }}</p>
-                        <p class="blue card-text">{{ project.description }}</p>
-                    </div>
-                </div>
-            </div>
-            {% endfor %}
-            </div>
-        </div>
-        {% if projects|length > 4 %}
-        <div class="carousel-item">
-            <div class="cards row">
-                {% for project in projects|slice:"4:8" %}
-                <div class="col-3">
-                    <div class="card project-card">
-                        <div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover; background-image: url({{ project.image.url }})"></div>
-                        <div class="card-body">
-                            <p class="blue card-title">{{ project.title }}</p>
-                            <p class="blue card-text">{{ project.description }}</p>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-        {% endif %}
-        {% if projects|length > 8 %}
-        <div class="carousel-item">
-            <div class="cards row">
-                {% for project in projects|slice:"8:12" %}
-                <div class="col-3">
-                    <div class="card project-card">
-                        <div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover; background-image: url({{ project.image.url }})"></div>
-                        <div class="card-body">
-                            <p class="blue card-title">{{ project.title }}</p>
-                            <p class="blue card-text">{{ project.description }}</p>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-        {% endif %}
-        {% if projects|length > 12 %}
-        <div class="carousel-item">
-            <div class="cards row">
-                {% for project in projects|slice:"12:16" %}
-                <div class="col-3">
-                    <div class="card project-card">
-                        <div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover; background-image: url({{ project.image.url }})"></div>
-                        <div class="card-body">
-                            <p class="blue card-title">{{ project.title }}</p>
-                            <p class="blue card-text">{{ project.description }}</p>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-        {% endif %}
-        {% if projects|length > 16 %}
-        <div class="carousel-item">
-            <div class="cards row">
-                {% for project in projects|slice:"16:20" %}
-                <div class="col-3">
-                    <div class="card project-card">
-                        <div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover; background-image: url({{ project.image.url }})"></div>
-                        <div class="card-body">
-                            <p class="blue card-title">{{ project.title }}</p>
-                            <p class="blue card-text">{{ project.description }}</p>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-        {% endif %}
-    </div>
+	<div class="carousel-item active">
+		<div class="cards row">
+		{% for project in projects|slice:"0:3" %}
+		<div class="col-4">
+			<div class="card project-card">
+				<div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover; background-image: url({{ project.image.url }})"></div>
+				<div class="card-body">
+					<p class="blue card-title">{{ project.title }}</p>
+					<p class="blue card-text">{{ project.description }}</p>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+		</div>
+	</div>
+	{% if projects|length > 3 %}
+	<div class="carousel-item">
+		<div class="cards row">
+			{% for project in projects|slice:"3:6" %}
+			<div class="col-4">
+				<div class="card project-card">
+					<div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover; background-image: url({{ project.image.url }})"></div>
+					<div class="card-body">
+						<p class="blue card-title">{{ project.title }}</p>
+						<p class="blue card-text">{{ project.description }}</p>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	{% endif %}
+	{% if projects|length > 6 %}
+	<div class="carousel-item">
+		<div class="cards row">
+			{% for project in projects|slice:"6:9" %}
+			<div class="col-4">
+				<div class="card project-card">
+					<div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover; background-image: url({{ project.image.url }})"></div>
+					<div class="card-body">
+						<p class="blue card-title">{{ project.title }}</p>
+						<p class="blue card-text">{{ project.description }}</p>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	{% endif %}
+	{% if projects|length > 9 %}
+	<div class="carousel-item">
+		<div class="cards row">
+			{% for project in projects|slice:"9:12" %}
+			<div class="col-4">
+				<div class="card project-card">
+					<div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover; background-image: url({{ project.image.url }})"></div>
+					<div class="card-body">
+						<p class="blue card-title">{{ project.title }}</p>
+						<p class="blue card-text">{{ project.description }}</p>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	{% endif %}
+	{% if projects|length > 12 %}
+	<div class="carousel-item">
+		<div class="cards row">
+			{% for project in projects|slice:"12:15" %}
+			<div class="col-4">
+				<div class="card project-card">
+					<div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover; background-image: url({{ project.image.url }})"></div>
+					<div class="card-body">
+						<p class="blue card-title">{{ project.title }}</p>
+						<p class="blue card-text">{{ project.description }}</p>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	{% endif %}
+	{% if projects|length > 15 %}
+	<div class="carousel-item">
+		<div class="cards row">
+			{% for project in projects|slice:"15:18" %}
+			<div class="col-4">
+				<div class="card project-card">
+					<div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover; background-image: url({{ project.image.url }})"></div>
+					<div class="card-body">
+						<p class="blue card-title">{{ project.title }}</p>
+						<p class="blue card-text">{{ project.description }}</p>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	{% endif %}
+	{% if projects|length > 18 %}
+	<div class="carousel-item">
+		<div class="cards row">
+			{% for project in projects|slice:"18:21" %}
+			<div class="col-4">
+				<div class="card project-card">
+					<div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover; background-image: url({{ project.image.url }})"></div>
+					<div class="card-body">
+						<p class="blue card-title">{{ project.title }}</p>
+						<p class="blue card-text">{{ project.description }}</p>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+	</div>
+	{% endif %}
+</div>
 </div>
 {% if projects|length > 4 %}
 <div id="project-scroll">

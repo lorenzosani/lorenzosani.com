@@ -1,0 +1,40 @@
+{% load static %}
+<div class="nav-container sticky-top" id="nav-standard">
+  <nav id="nav-contact">
+    <div class="nav-mobile">
+      <a class="nav-toggle" id="contact-toggle" onclick="menuToggle('contact')" href="#!"><span class="blue-toggle"></span></a>
+    </div>
+    <ul class="nav-list" id="contact-list">
+      <li>
+        <a href="#main" onclick="menuToggle('contact'), animateSection('contact', 'main')"
+          class="text-hover text-hover-linethrough-goes-right blue">Home</a>
+      </li>
+      <li>
+        <a href="#about" onclick="menuToggle('contact'), animateSection('contact', 'avout')"
+          class="text-hover text-hover-linethrough-goes-right blue">Home</a>
+      </li>
+      <li>
+        <a href="#projects" onclick="menuToggle('contact'), animateSection('contact', 'projects')" class="text-hover text-hover-linethrough-goes-right blue">Projects</a>
+      </li>
+      <li>
+        <a href="#!" class="white-active text-hover text-hover-linethrough-goes-right blue">Contact</a>
+      </li>
+      <li>
+        <a href="https://www.linkedin.com/in/lorenzo-sani/" target="_blank" class="white text-hover text-hover-linethrough-goes-right blue"><img src="{% static 'linkedin-blue.png' %}" height="20px" width="20px"></a>&nbsp;
+        <a href="https://www.github.com/lorenzosani/" target="_blank" class="white text-hover text-hover-linethrough-goes-right blue"><img src="{% static 'github-blue.png' %}" height="20px" width="20px"></a>
+      </li>
+    </ul>
+  </nav>
+</div>
+
+<script>
+  menuToggle = (section) => {
+    let nav = $(`#${section}-toggle`);
+    $(`#${section}-list`).slideToggle();
+    if (nav.hasClass("active")) {
+      nav.removeClass("active");
+    } else {
+      nav.addClass("active");
+    }
+  }
+</script>

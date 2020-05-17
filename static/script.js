@@ -98,6 +98,18 @@ $(document).ready(() => {
       .css("top", "-10px")
       .css("opacity", 0);
   };
+  contactAppear = () => {
+    setTimeout(() => {
+      $("#nav-contact")
+        .css("top", "0")
+        .css("opacity", 1);
+    }, 1200);
+  };
+  contactDisappear = () => {
+    $("#nav-contact")
+      .css("top", "-10px")
+      .css("opacity", 0);
+  };
 
   // Mouse wheel scroll animation
   $("#home, #about-section, #projects-section, #contact-section").bind(
@@ -112,9 +124,9 @@ $(document).ready(() => {
     }
   );
   getScroll = (e, from) => {
-    if (e.originalEvent.wheelDelta < 0) {
+    if (e.originalEvent.wheelDelta < 0 && sections[from["index"] + 1] != undefined) {
       animateSection(sections[from["index"]], sections[from["index"] + 1]);
-    } else if (e.originalEvent.wheelDelta > 0 && from["index"] > 0) {
+    } else if (e.originalEvent.wheelDelta > 0 && sections[from["index"] - 1] != undefined) {
       animateSection(sections[from["index"]], sections[from["index"] - 1]);
     }
   };
@@ -141,6 +153,13 @@ $(document).ready(() => {
     } else if (from == "projects") {
       projectsDisappear();
     }
+
+    // Contact animation
+    if (from == "contact") {
+      contactDisappear();
+    } else if (to == "contact") {
+      contactAppear();
+    }
     fullpage_api.moveTo(to, 0);
   };
 
@@ -148,9 +167,8 @@ $(document).ready(() => {
   $("#fullpage").fullpage({
     licenseKey: "6565F2B8-BA0F41C3-BC8C06A0-1D42DA81",
     anchors: sections,
-    autoScrolling: true,
     scrollHorizontally: false,
-    sectionsColor: ["#fc7753", "#00335d", "blue", "blue"],
+    sectionsColor: ["#fc7753", "#00335d", "#fc7753", "#fc7753"],
     scrollingSpeed: 1500
   });
 });

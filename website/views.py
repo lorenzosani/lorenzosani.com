@@ -19,6 +19,10 @@ def projects(request):
     context = { "projects" : projects }
     return HttpResponse(template.render(context, request))
 
+def contact(request):
+    template = loader.get_template('website/contact.html')
+    return HttpResponse(template.render({}, request))
+
 def filterProjects(request):
     template = loader.get_template('website/projects-carousel.html')
     filters = request.GET

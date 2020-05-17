@@ -545,7 +545,7 @@ button:hover .button-text {
   z-index: 3;
 }
 
-#nav-projects, #nav-about {
+#nav-projects, #nav-about, #nav-contact {
   opacity: 0;
   position: absolute;
   right: 0;
@@ -556,7 +556,7 @@ button:hover .button-text {
 }
 
 .bubble{
-  opacity: .8;
+  opacity: .6;
   width: fit-content;
   background-color: white;
   color: #00335d;
@@ -809,8 +809,8 @@ button:hover .button-text {
   .padding-sides{
     padding: 0 2vw 0 10vw;
   }
-  .cards .col-3{
-    max-width: 13% !important;
+  .cards .col-4{
+    max-width: 20% !important;
     padding: 0 5px !important;
   }
   .project-card{
