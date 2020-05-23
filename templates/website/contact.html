@@ -10,8 +10,8 @@
           class="text-hover text-hover-linethrough-goes-right blue">Home</a>
       </li>
       <li>
-        <a href="#about" onclick="menuToggle('contact'), animateSection('contact', 'avout')"
-          class="text-hover text-hover-linethrough-goes-right blue">Home</a>
+        <a href="#about" onclick="menuToggle('contact'), animateSection('contact', 'about')"
+          class="text-hover text-hover-linethrough-goes-right blue">About</a>
       </li>
       <li>
         <a href="#projects" onclick="menuToggle('contact'), animateSection('contact', 'projects')" class="text-hover text-hover-linethrough-goes-right blue">Projects</a>
@@ -20,13 +20,28 @@
         <a href="#!" class="white-active text-hover text-hover-linethrough-goes-right blue">Contact</a>
       </li>
       <li>
-        <a href="https://www.linkedin.com/in/lorenzo-sani/" target="_blank" class="white text-hover text-hover-linethrough-goes-right blue"><img src="{% static 'linkedin-blue.png' %}" height="20px" width="20px"></a>&nbsp;
-        <a href="https://www.github.com/lorenzosani/" target="_blank" class="white text-hover text-hover-linethrough-goes-right blue"><img src="{% static 'github-blue.png' %}" height="20px" width="20px"></a>
+        <a href="https://www.linkedin.com/in/lorenzo-sani/" target="_blank" class="text-hover text-hover-linethrough-goes-right blue"><img src="{% static 'linkedin-blue.png' %}" height="20px" width="20px"></a>&nbsp;
+        <a href="https://www.github.com/lorenzosani/" target="_blank" class="text-hover text-hover-linethrough-goes-right blue"><img src="{% static 'github-blue.png' %}" height="20px" width="20px"></a>
       </li>
     </ul>
   </nav>
 </div>
 
+<h1 class="title section-title blue">Contact</h1>
+
+<div class="center-page blue" id="header">
+  <br/><br/>
+  <div class="text" id="subtitle-text">
+    Drop me an email at
+  </div>
+  <div class="email">
+    lorenzosani97@gmail.com
+  </div>
+  <div class="contact-icons">
+    <a href="https://www.linkedin.com/in/lorenzo-sani/" target="_blank"><img src="{% static 'linkedin-blue.png' %}" height="35vh" width="35vh"></a>&nbsp;
+    <a href="https://www.github.com/lorenzosani/" target="_blank" ><img src="{% static 'github-blue.png' %}" height="35vh" width="35vh"></a>
+  </div>
+</div>
 <script>
   menuToggle = (section) => {
     let nav = $(`#${section}-toggle`);

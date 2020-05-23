@@ -30,11 +30,11 @@
 
 ::selection {
   color: #00335d;
-  background: white;
+  background: #f4f3f1;
 }
 ::-moz-selection {
   color: #00335d;
-  background: white;
+  background: #f4f3f1;
 }
 
 .center-page {
@@ -71,13 +71,18 @@
 
 #about-text {
   position: absolute;
-  top: 8vh;
+  max-width: 60%;
+  left: 0;
+  top: 13vh;
+  opacity: 0;
   padding: 8vw;
   font-size: 1.4vw;
   -webkit-font-smoothing: antialiased;
+  transition: top 1s, opacity .5s;
 }
 
 .section-title {
+  padding-left: 6vw;
   position: absolute;
   top: 15px;
   left: 30px;
@@ -89,15 +94,26 @@
 }
 
 .blue:hover:after, .blue:active:after {
-  background-color: white !important;
+  background-color: #f4f3f1 !important;
 }
 
 .white, .white:hover {
-  color: white;
+  color: #f4f3f1;
 }
 
 .orange {
   color: #fc7753;
+}
+
+.email {
+  font-family: "DM Serif Text", serif;
+  font-size: 4vw;
+  line-height: 5vw;
+  -webkit-font-smoothing: antialiased;
+}
+
+.contact-icons{
+  padding: 6vh 0 0 0;
 }
 
 .navigation {
@@ -111,7 +127,7 @@
 }
 
 nav {
-  opacity: .7;
+  opacity: .5;
   display: table;
   margin: auto;
   transition: opacity .3s;
@@ -126,17 +142,19 @@ nav ul {
   list-style: none;
   margin: 0;
   padding: 0;
-  font-size: 1.1vw;
+  font-size: 1.3vw;
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
 }
 
 nav ul li {
   float: left;
   position: relative;
-  opacity: 0.8;
+  opacity: 1;
   display: block;
   padding: 0 5px;
   margin: 1vh 1.5vw;
-  font-weight: 700;
   line-height: 70px;
   background: transparent;
   text-decoration: none;
@@ -233,7 +251,7 @@ nav ul li {
 
 .nav-list .white-active {
   text-decoration: none;
-  color: white;
+  color: #f4f3f1;
 }
 
 /* Mobile navigation */
@@ -263,7 +281,7 @@ nav ul li {
   border-radius: 1px;
   height: 5px;
   width: 35px;
-  background: white;
+  background: #f4f3f1;
   position: absolute;
   display: block;
   content: "";
@@ -321,6 +339,8 @@ button {
   font-size: 17px;
   -webkit-font-smoothing: antialiased;
   font-family: "Open Sans", sans-serif;
+  opacity: 0.6;
+  transition: opacity .3s;
 }
 
 button.learn-more {
@@ -386,6 +406,9 @@ button.learn-more .button-text {
   line-height: 1.6;
   text-align: center;
   text-transform: uppercase;
+}
+button:hover {
+  opacity: 1;
 }
 
 button:hover .circle {
@@ -512,18 +535,20 @@ button:hover .button-text {
 .image {
   position: absolute;
   bottom: 0px;
-  left: 0px;
+  right: 0px;
 }
 
 .image #back {
-  width: 34vw;
+  border-radius: 7.5px;
+  width: 35vw;
   height: auto;
   position: absolute;
+  margin-left: -7.5px;
   bottom: 0px;
-  left: 0px;
+  right: 0px;
   z-index: 1;
   transition: bottom 2s;
-  opacity: .8;
+  opacity: .9;
 }
 
 .image #front {
@@ -531,7 +556,7 @@ button:hover .button-text {
   height: auto;
   position: absolute;
   bottom: -50px;
-  left: -60px;
+  right: -30px;
   z-index: 2;
   transition: bottom 1.5s, opacity 1s;
 }
@@ -558,7 +583,7 @@ button:hover .button-text {
 .bubble{
   opacity: .6;
   width: fit-content;
-  background-color: white;
+  background-color: #f4f3f1;
   color: #00335d;
   border-radius: 20px;
   padding: 7.5px 15px;
@@ -577,7 +602,7 @@ button:hover .button-text {
   background-color: #fc7753;
   box-shadow: 0px 1px 8px #fc785394;
   font-weight: bold;
-  color: white;
+  color: #f4f3f1;
   transition: all .2s;
   opacity: 1;
 }
@@ -607,7 +632,7 @@ button:hover .button-text {
   opacity: .8;
   width: 100%;
   height: 40vh;
-  background: white;
+  background: #f4f3f1;
   border-radius: 8px;
   border-color: #00335d;
   margin: 10px 0;
@@ -656,7 +681,7 @@ button:hover .button-text {
   display: none;
 }
 
-@media (max-width: 950px) {
+@media (max-width: 1000px) {
   #title {
     font-size: 9vw;
     line-height: 10vw;
@@ -717,6 +742,12 @@ button:hover .button-text {
 }
 
 @media (max-width: 767px) {
+  .email {
+    font-family: "DM Serif Text", serif;
+    font-size: 7vw;
+    line-height: 10vw;
+    -webkit-font-smoothing: antialiased;
+  }
   .title {
     margin-top: -30px;
     font-size: 15vw;
@@ -730,12 +761,15 @@ button:hover .button-text {
   .image {
     visibility: hidden;
     display: none;
-  }
+  }  
   #about-text {
+    margin-top: 30px;
     font-size: 2.25vh;
+    max-width: 100%;
     bottom:auto;
     top:100px;
     padding: 30px;
+    transition: top 1.5s, opacity 1s;
   }
   .right{
     float: left;

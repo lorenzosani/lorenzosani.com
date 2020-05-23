@@ -73,15 +73,19 @@ $(document).ready(() => {
   aboutAppear = () => {
     setTimeout(() => {
       $(".image #front").css("bottom", 0);
-    }, 600);
-    setTimeout(() => {
+      $("#about-text")
+      .css("top", "8vh")
+      .css("opacity", 1);
       $("#nav-about")
         .css("top", "0")
         .css("opacity", 1);
-    }, 1200);
+    }, 600);
   };
   aboutDisappear = () => {
     $(".image #front").css("bottom", "-50px");
+    $("#about-text")
+      .css("top", "12vh")
+      .css("opacity", 0);
     $("#nav-about")
       .css("top", "-10px")
       .css("opacity", 0);
@@ -91,7 +95,8 @@ $(document).ready(() => {
       $("#nav-projects")
         .css("top", "0")
         .css("opacity", 1);
-    }, 1200);
+      $(".padding-sides")
+    }, 600);
   };
   projectsDisappear = () => {
     $("#nav-projects")
@@ -168,7 +173,7 @@ $(document).ready(() => {
     licenseKey: "6565F2B8-BA0F41C3-BC8C06A0-1D42DA81",
     anchors: sections,
     scrollHorizontally: false,
-    sectionsColor: ["#fc7753", "#00335d", "#fc7753", "#fc7753"],
+    sectionsColor: ["#f4f3f1", "#00335d", "#fc7753", "#fc7753"],
     scrollingSpeed: 1500
   });
 });
