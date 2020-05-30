@@ -173,7 +173,7 @@ $(document).ready(() => {
     licenseKey: "6565F2B8-BA0F41C3-BC8C06A0-1D42DA81",
     anchors: sections,
     scrollHorizontally: false,
-    sectionsColor: ["#f4f3f1", "#00335d", "#fc7753", "#fc7753"],
+    sectionsColor: ["#fc7753", "#00335d", "#fc7753", "#fc7753"],
     scrollingSpeed: 1500
   });
 });
