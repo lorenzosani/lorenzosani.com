@@ -3,18 +3,11 @@ import os
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+SECRET_KEY = os.environ['SECRET_KEY']
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/3.0/howto/deployment/checklist/
+DEBUG = False
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '1vs$kv7muvk2s*l_6837-w)u3brw1x+i%qha9osh)0@a%u(rb_'
-
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-
-ALLOWED_HOSTS = []
-
+ALLOWED_HOSTS = ['lorenzosani.com', 'django-env.eba-gwgsz3pp.eu-west-2.elasticbeanstalk.com']
 
 # Application definition
 
@@ -107,7 +100,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_ROOT = ''
+STATIC_ROOT = './static/'
 
 STATIC_URL = '/static/'
 
