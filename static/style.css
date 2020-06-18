@@ -78,7 +78,7 @@
   padding: 8vw;
   font-size: 1.4vw;
   -webkit-font-smoothing: antialiased;
-  transition: top 1s, opacity .5s;
+  transition: top 1s, opacity 0.5s;
 }
 
 .section-title {
@@ -89,15 +89,18 @@
   -webkit-font-smoothing: antialiased;
 }
 
-.blue, .blue:hover {
+.blue,
+.blue:hover {
   color: #00335d;
 }
 
-.blue:hover:after, .blue:active:after {
+.blue:hover:after,
+.blue:active:after {
   background-color: #f4f3f1 !important;
 }
 
-.white, .white:hover {
+.white,
+.white:hover {
   color: #f4f3f1;
 }
 
@@ -112,7 +115,7 @@
   -webkit-font-smoothing: antialiased;
 }
 
-.contact-icons{
+.contact-icons {
   padding: 6vh 0 0 0;
 }
 
@@ -127,15 +130,15 @@
 }
 
 nav {
-  opacity: .9;
+  opacity: 0.9;
   display: table;
   margin: auto;
-  transition: opacity .3s;
+  transition: opacity 0.3s;
 }
 
 nav:hover {
   opacity: 1;
-  transition: opacity .3s;
+  transition: opacity 0.3s;
 }
 
 nav ul {
@@ -340,7 +343,7 @@ button {
   -webkit-font-smoothing: antialiased;
   font-family: "Open Sans", sans-serif;
   opacity: 0.9;
-  transition: opacity .3s;
+  transition: opacity 0.3s;
 }
 
 button.learn-more {
@@ -359,7 +362,7 @@ button.learn-more .circle {
   background: #fc7753;
 }
 
-.circle{
+.circle {
   box-shadow: 0px 1px 8px #fc785369;
 }
 
@@ -463,13 +466,13 @@ button:hover .button-text {
 #project-scroll a {
   position: absolute;
   top: 60%;
-  height:fit-content;
+  height: fit-content;
   z-index: 2;
   display: inline-block;
   color: #fff;
 }
 
-#project-scroll a span{
+#project-scroll a span {
   opacity: 1;
   transition: opacity 2s;
   position: absolute;
@@ -484,14 +487,14 @@ button:hover .button-text {
 #project-scroll-next {
   border-right: 1px solid #fff;
   border-bottom: 1px solid #fff;
-  right:0;
+  right: 0;
   margin-right: 50px;
 }
 
 #project-scroll-prev {
   border-top: 1px solid #fff;
   border-left: 1px solid #fff;
-  left:0;
+  left: 0;
   margin-left: 50px;
 }
 
@@ -505,7 +508,7 @@ button:hover .button-text {
   border-left: 1px solid #fc7753;
 }
 
-.back-to-selection{
+.back-to-selection {
   display: none;
 }
 
@@ -548,7 +551,7 @@ button:hover .button-text {
   right: 0px;
   z-index: 1;
   transition: bottom 2s;
-  opacity: .9;
+  opacity: 0.9;
 }
 
 .image #front {
@@ -570,18 +573,20 @@ button:hover .button-text {
   z-index: 3;
 }
 
-#nav-projects, #nav-about, #nav-contact {
+#nav-projects,
+#nav-about,
+#nav-contact {
   opacity: 0;
   position: absolute;
   right: 0;
   top: -10px;
   font-family: "Open Sans", sans-serif;
   font-weight: 600;
-  transition: all .7s ease-in-out !important;
+  transition: all 0.7s ease-in-out !important;
 }
 
-.bubble{
-  opacity: .9;
+.bubble {
+  opacity: 0.9;
   width: fit-content;
   background-color: #f4f3f1;
   color: #00335d;
@@ -591,70 +596,75 @@ button:hover .button-text {
   font-family: "Open Sans", sans-serif;
   font-size: 1vw;
   font-weight: bold;
-  transition: all .2s;
+  transition: all 0.2s;
 }
 
-.bubble:focus{
+.bubble:focus {
   outline: 0;
 }
 
-.bubble:hover{
-  opacity:1;
+.bubble:hover {
+  opacity: 1;
 }
 
-.bubble-active{
+.bubble-active {
   background-color: #fc7753;
   box-shadow: 0px 1px 8px #fc785394;
   font-weight: bold;
   color: #f4f3f1;
-  transition: all .2s;
+  transition: all 0.2s;
   opacity: 1;
 }
 
-.padding-sides{
+.padding-sides {
   padding: 0 15vw;
   transition: all 1s;
 }
 
-.padding-top{
+.padding-top {
   margin-top: 30vh;
 }
 
-#projectsCarousel .carousel-inner{
+#projectsCarousel .carousel-inner {
   margin: 0 -15px -15px -15px;
   padding: 15px;
 }
 
-.cards{
+.cards {
   margin-top: 30px;
   margin-right: 20px !important;
   margin-left: -10px !important;
 }
 
-.project-card{
+.cards a:hover {
+  text-decoration: none;
+}
+
+.project-card {
   padding: 0 !important;
-  opacity: .9;
+  opacity: 0.9;
   width: 100%;
   height: 40vh;
   background: #f4f3f1;
   border-radius: 8px;
   border-color: #00335d;
   margin: 10px 0;
-  box-shadow: 0px 1px 4px rgba(0,23,42, 0.6);
+  box-shadow: 0px 1px 4px rgba(0, 23, 42, 0.6);
   transition-property: opacity, box-shadow;
-  transition-duration: .5s;
+  transition-duration: 0.5s;
   transition-timing-function: cubic-bezier(0.65, 0, 0.076, 1);
 }
 
-.project-card:hover{
+.project-card:hover {
   opacity: 1;
-  box-shadow: 0px 10px 20px rgba(0,23,42, 0.95);
+  box-shadow: 0px 10px 20px rgba(0, 23, 42, 0.95);
   transition-property: opacity, box-shadow;
-  transition-duration: .5s;
+  transition-duration: 0.5s;
   transition-timing-function: cubic-bezier(0.65, 0, 0.076, 1);
+  text-decoration: none;
 }
 
-.card-image{
+.card-image {
   margin-top: -1px;
   width: 100%;
   height: 40%;
@@ -662,26 +672,26 @@ button:hover .button-text {
   border-top-right-radius: 8px;
 }
 
-.card-body{
+.card-body {
   width: 100%;
   height: 60%;
   padding: 20px;
 }
 
-.card-title{
+.card-title {
   font-family: "Open Sans", sans-serif;
   font-size: 1vw;
   font-weight: bold;
   text-align: start;
 }
 
-.card-text{
+.card-text {
   font-family: "Open Sans", sans-serif;
   font-size: 0.8vw;
   text-align: start;
 }
 
-.p-hide{
+.p-hide {
   display: none;
 }
 
@@ -728,19 +738,19 @@ button:hover .button-text {
   .nav-dropdown {
     position: static;
   }
-  .bubble{
+  .bubble {
     font-size: 2vw;
     padding: 10px 20px;
   }
-  .project-card{
+  .project-card {
     width: 25vw;
     height: 35vh;
     margin-top: -2.5h;
   }
-  .card-title{
+  .card-title {
     font-size: 2vw;
   }
-  .card-text{
+  .card-text {
     font-size: 1.5vw;
   }
 }
@@ -765,17 +775,17 @@ button:hover .button-text {
   .image {
     visibility: hidden;
     display: none;
-  }  
+  }
   #about-text {
     margin-top: 30px;
     font-size: 2.25vh;
     max-width: 100%;
-    bottom:auto;
-    top:100px;
+    bottom: auto;
+    top: 100px;
     padding: 30px;
     transition: top 1.5s, opacity 1s;
   }
-  .right{
+  .right {
     float: left;
     width: 100vw;
   }
@@ -799,8 +809,8 @@ button:hover .button-text {
     height: 105vh;
     width: 105vw;
     position: absolute;
-    top:-15px;
-    right:-15px;
+    top: -15px;
+    right: -15px;
   }
   nav ul li {
     float: none;
@@ -823,20 +833,20 @@ button:hover .button-text {
     background-color: #00335d !important;
     height: 5px;
   }
-  .padding-top{
-    margin-top:25vh;
+  .padding-top {
+    margin-top: 25vh;
   }
-  .bubble{
+  .bubble {
     font-size: 4vw;
     padding: 7.5px 15px;
   }
-  .p-hide{
+  .p-hide {
     display: block;
   }
-  #projectsCarousel{
+  #projectsCarousel {
     display: none;
   }
-  #project-scroll a{
+  #project-scroll a {
     display: none;
     top: 20%;
     transform: scale(0.6);
@@ -844,35 +854,36 @@ button:hover .button-text {
   #project-scroll-prev {
     left: 90vw;
   }
-  .padding-sides{
+  .padding-sides {
     padding: 0 2vw 0 10vw;
   }
-  .cards .col-4{
+  .cards .col-4 {
     max-width: 20% !important;
     padding: 0 5px !important;
   }
-  .project-card{
+  .project-card {
     opacity: 1;
     width: 50vw;
     height: 50vh;
     margin-top: -5vh;
     box-shadow: -5px 2px 5px rgba(0, 51, 93, 0.4);
-    transition: all .4s ease-in-out;
+    transition: all 0.4s ease-in-out;
   }
-  .carousel-inner{
+  .carousel-inner {
     padding-top: 30px !important;
   }
-  .project-card:hover{
+  .project-card:hover {
     z-index: 10;
     margin-top: -5.5vh;
     transform: scale(1.05);
     box-shadow: 0px 2px 20px rgba(0, 51, 93, 0.8);
-    transition: all .4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+    text-decoration: none;
   }
-  .card-title{
+  .card-title {
     font-size: 4vw;
   }
-  .card-text{
+  .card-text {
     font-size: 3vw;
   }
 }

@@ -22,9 +22,9 @@ class ProjectTechnology(models.Model):
 class Project(models.Model):
     image = models.ImageField(upload_to ='static/')
     title = models.CharField(max_length=30, primary_key=True)
-    description = models.TextField(max_length=100)
-    long_description = models.TextField(blank=True)
+    description = models.TextField(max_length=200)
     date_finished = models.DateField()
+    link = models.URLField(blank=True)
     tags = models.ManyToManyField("ProjectTag")
     technologies_used = models.ManyToManyField("ProjectTechnology", blank=True)
     def __str__(self):
