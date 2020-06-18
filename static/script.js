@@ -153,8 +153,9 @@ $(document).ready(() => {
 
   function handleTouchEnd(evt) {
     const firstTouch = getTouches(evt)[0];
-    if (!xDiff && !yDiff) {
-      document.elementFromPoint(xDown, yDown).click();
+    const element = document.elementFromPoint(xDown, yDown);
+    if (!xDiff && !yDiff && element.classList.contains("text-hover")) {
+      element.click();
     }
   }
 
