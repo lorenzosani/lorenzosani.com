@@ -1,29 +1,29 @@
 $(document).ready(() => {
   // Redirect to main page
-  window.location.hash = '#main';
+  window.location.hash = "#main";
 
   // Stars background to move with mouse
   let firstMove = true;
   let initialX, initialY;
-  $("#home").mousemove(function(e) {
+  $("#home").mousemove(function (e) {
     parallaxIt(e, "#home-back", 10);
     parallaxIt(e, "#home-middle", 30);
     parallaxIt(e, "#home-front", 20);
   });
-  
+
   parallaxIt = (e, target, movement) => {
     if (firstMove) {
       firstMove = false;
       initialX = e.pageX;
       initialY = e.pageY;
     }
-    var x = (initialX - e.pageX)/movement;
-    var y = (initialY - e.pageY)/movement;
+    var x = (initialX - e.pageX) / movement;
+    var y = (initialY - e.pageY) / movement;
     var command = "translate(" + x + "px, " + y + "px)";
     setTimeout(() => {
       $(target).css("transform", command);
     }, 50);
-  }
+  };
 
   let sections = ["main", "about", "projects", "contact"];
 
@@ -32,9 +32,7 @@ $(document).ready(() => {
 
   // Hide splash screen and animate appearance
   setTimeout(() => {
-    $(".center-page")
-      .css("opacity", "100")
-      .css("top", "-10vh");
+    $(".center-page").css("opacity", "100").css("top", "-10vh");
   }, 500);
   $("#loader").css("opacity", "0");
   $("#loader").css("display", "none");
@@ -73,47 +71,31 @@ $(document).ready(() => {
   aboutAppear = () => {
     setTimeout(() => {
       $(".image #front").css("bottom", 0);
-      $("#about-text")
-      .css("top", "8vh")
-      .css("opacity", 1);
-      $("#nav-about")
-        .css("top", "0")
-        .css("opacity", 1);
+      $("#about-text").css("top", "8vh").css("opacity", 1);
+      $("#nav-about").css("top", "0").css("opacity", 1);
     }, 600);
   };
   aboutDisappear = () => {
     $(".image #front").css("bottom", "-50px");
-    $("#about-text")
-      .css("top", "12vh")
-      .css("opacity", 0);
-    $("#nav-about")
-      .css("top", "-10px")
-      .css("opacity", 0);
+    $("#about-text").css("top", "12vh").css("opacity", 0);
+    $("#nav-about").css("top", "-10px").css("opacity", 0);
   };
   projectsAppear = () => {
     setTimeout(() => {
-      $("#nav-projects")
-        .css("top", "0")
-        .css("opacity", 1);
-      $(".padding-sides")
+      $("#nav-projects").css("top", "0").css("opacity", 1);
+      $(".padding-sides");
     }, 600);
   };
   projectsDisappear = () => {
-    $("#nav-projects")
-      .css("top", "-10px")
-      .css("opacity", 0);
+    $("#nav-projects").css("top", "-10px").css("opacity", 0);
   };
   contactAppear = () => {
     setTimeout(() => {
-      $("#nav-contact")
-        .css("top", "0")
-        .css("opacity", 1);
+      $("#nav-contact").css("top", "0").css("opacity", 1);
     }, 1200);
   };
   contactDisappear = () => {
-    $("#nav-contact")
-      .css("top", "-10px")
-      .css("opacity", 0);
+    $("#nav-contact").css("top", "-10px").css("opacity", 0);
   };
 
   // Mouse wheel scroll animation
@@ -129,13 +111,86 @@ $(document).ready(() => {
     }
   );
   getScroll = (e, from) => {
-    if (e.originalEvent.wheelDelta < 0 && sections[from["index"] + 1] != undefined) {
+    if (
+      e.originalEvent.wheelDelta < 0 &&
+      sections[from["index"] + 1] != undefined
+    ) {
       animateSection(sections[from["index"]], sections[from["index"] + 1]);
-    } else if (e.originalEvent.wheelDelta > 0 && sections[from["index"] - 1] != undefined) {
+    } else if (
+      e.originalEvent.wheelDelta > 0 &&
+      sections[from["index"] - 1] != undefined
+    ) {
       animateSection(sections[from["index"]], sections[from["index"] - 1]);
     }
   };
-  
+
+  $("#home, #about-section, #projects-section").on(
+    "touchstart",
+    handleTouchStart
+  );
+  $("#home, #about-section, #projects-section").on("touchend", handleTouchEnd);
+  $("#home, #about-section, #projects-section").on(
+    "touchmove",
+    handleTouchMove
+  );
+
+  var xDiff = null;
+  var yDiff = null;
+  var xDown = null;
+  var yDown = null;
+
+  function getTouches(evt) {
+    return evt.touches || evt.originalEvent.touches;
+  }
+
+  function handleTouchStart(evt) {
+    xDiff = null;
+    yDiff = null;
+    const firstTouch = getTouches(evt)[0];
+    xDown = firstTouch.clientX;
+    yDown = firstTouch.clientY;
+  }
+
+  function handleTouchEnd(evt) {
+    const firstTouch = getTouches(evt)[0];
+    if (!xDiff && !yDiff) {
+      document.elementFromPoint(xDown, yDown).click();
+    }
+  }
+
+  function handleTouchMove(evt) {
+    if (!xDown || !yDown) {
+      return;
+    }
+
+    var xUp = evt.touches[0].clientX;
+    var yUp = evt.touches[0].clientY;
+
+    xDiff = xDown - xUp;
+    yDiff = yDown - yUp;
+
+    if (Math.abs(xDiff) < Math.abs(yDiff)) {
+      const current = fullpage_api.getActiveSection();
+      if (yDiff > 0) {
+        if (sections[current["index"] + 1] != undefined) {
+          animateSection(
+            sections[current["index"]],
+            sections[current["index"] + 1]
+          );
+        }
+      } else {
+        if (sections[current["index"] - 1] != undefined) {
+          animateSection(
+            sections[current["index"]],
+            sections[current["index"] - 1]
+          );
+        }
+      }
+    }
+    xDown = null;
+    yDown = null;
+  }
+
   // Animates transitions from one section to other
   animateSection = (from, to) => {
     // Home animation
