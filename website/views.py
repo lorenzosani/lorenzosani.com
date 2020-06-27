@@ -16,6 +16,8 @@ def about(request):
 def projects(request):
     template = loader.get_template('website/projects.html')
     projects = Project.objects.all().order_by('-date_finished')
+    for project in projects:
+        project.labels = project.technologies_used.values_list('name', flat=True)
     context = { "projects" : projects }
     return HttpResponse(template.render(context, request))
 
@@ -27,10 +29,15 @@ def filterProjects(request):
     template = loader.get_template('website/projects-carousel.html')
     filters = request.GET
     if 'true' not in filters.values():
-        return HttpResponse(template.render({ "projects" : Project.objects.all().order_by('-date_finished') }, request))
+        projects = Project.objects.all().order_by('-date_finished')
+        for project in projects:
+            project.labels = project.technologies_used.values_list('name', flat=True)
+        return HttpResponse(template.render({ "projects" : projects }, request))
     tag_names = []
     for i in filters.items():
         if i[1] == 'true':
             tag_names.append(i[0])
     projects = Project.objects.filter(tags__in=tag_names).distinct().order_by('-date_finished')
+    for project in projects:
+        project.labels = project.technologies_used.values_list('name', flat=True)
     return HttpResponse(template.render({ "projects" : projects }, request))
