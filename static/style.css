@@ -691,6 +691,19 @@ button:hover .button-text {
   text-align: start;
 }
 
+.project-labels {
+  position: absolute;
+  font-family: "Open Sans", sans-serif;
+  bottom: 0;
+  padding: 12px 0;
+}
+
+.project-label {
+  margin: 4px 4px 4px 0;
+  background-color: rgba(0, 23, 42, 0.3);
+  font-size: 11.5px;
+}
+
 .p-hide {
   display: none;
 }
