@@ -15,7 +15,7 @@ def about(request):
 
 def projects(request):
     template = loader.get_template('website/projects.html')
-    projects = Project.objects.all().order_by('date_finished')
+    projects = Project.objects.all().order_by('-date_finished')
     context = { "projects" : projects }
     return HttpResponse(template.render(context, request))
 
@@ -27,10 +27,10 @@ def filterProjects(request):
     template = loader.get_template('website/projects-carousel.html')
     filters = request.GET
     if 'true' not in filters.values():
-        return HttpResponse(template.render({ "projects" : Project.objects.all() }, request))
+        return HttpResponse(template.render({ "projects" : Project.objects.all().order_by('-date_finished') }, request))
     tag_names = []
     for i in filters.items():
         if i[1] == 'true':
             tag_names.append(i[0])
-    projects = Project.objects.filter(tags__in=tag_names).distinct().order_by('date_finished')
+    projects = Project.objects.filter(tags__in=tag_names).distinct().order_by('-date_finished')
     return HttpResponse(template.render({ "projects" : projects }, request))
