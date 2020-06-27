@@ -627,7 +627,7 @@ button:hover .button-text {
 
 #projectsCarousel .carousel-inner {
   margin: 0 -15px -15px -15px;
-  padding: 0 15px;
+  padding: 0 15px 15px 15px;
 }
 
 .cards {
