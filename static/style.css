@@ -642,7 +642,7 @@ button:hover .button-text {
 
 .project-card {
   padding: 0 !important;
-  opacity: 0.9;
+  opacity: 0.95;
   width: 100%;
   height: 50vh;
   background: #f4f3f1;
