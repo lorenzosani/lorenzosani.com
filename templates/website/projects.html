@@ -28,7 +28,7 @@
 <h1 class="title section-title orange">Projects</h1>
 
 <div class="white padding-sides padding-top">
-    <div class="text mb-4 p-hide" style="font-size: 4.5vw;">
+    <div id="filters-title" class="text mb-4 p-hide" style="font-size: 4.5vw;">
         Filter projects by category
     </div>
     <button class="bubble" onclick="select('web-dev')" id="web-dev">WebDev</button>
@@ -38,220 +38,48 @@
     <button class="bubble" onclick="select('machine-learning')" id="machine-learning">Machine Learning</button>
     <button class="bubble" onclick="select('ui-ux-design')" id="ui-ux-design">UI/UX Design</button>
     <button class="bubble" onclick="select('graphic-design')" id="graphic-design">Graphic Design</button>
-    <button class="learn-more p-hide">
-        <a href="#!" onclick="showProjects()">
-            <span class="circle">
-                <span class="icon arrow"></span>
-            </span>
-            <span class="button-text orange">See Projects</span>
+
+
+<div id="projectsCarousel">
+    <div class="cards">
+    {% for project in projects %}
+    <div class="card-container">
+        <a href="{{project.link}}" target="_blank" class="card project-card">
+            <div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover; background-image: url({{ project.image.url }})"></div>
+            <div class="card-body">
+                <p class="blue card-title">{{ project.title }}</p>
+                <p class="blue card-text">{{ project.description }}</p>
+                {% if project.labels %}
+                    <div class="project-labels d-flex">
+                    {% for label in project.labels %}
+                        <div class="badge badge-primary project-label">{{ label }}</div>
+                    {% endfor %}
+                    </div>
+                {% endif %}
+            </div>
         </a>
-    </button>
-
-<div id="projectsCarousel" class="carousel slide" data-ride="carousel">
-    <div class="carousel-inner">
-	<div class="carousel-item active">
-		<div class="cards row">
-		{% for project in projects|slice:"0:3" %}
-		<div class="col-4">
-            <a href="{{project.link}}" target="_blank">
-			<div class="card project-card">
-				<div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover; background-image: url({{ project.image.url }})"></div>
-				<div class="card-body">
-					<p class="blue card-title">{{ project.title }}</p>
-					<p class="blue card-text">{{ project.description }}</p>
-                    {% if project.labels %}
-                        <div class="project-labels d-flex">
-                        {% for label in project.labels %}
-                            <div class="badge badge-primary project-label">{{ label }}</div>
-                        {% endfor %}
-                        </div>
-                    {% endif %}
-				</div>
-			</div>
-            </a>
-		</div>
-		{% endfor %}
-		</div>
-	</div>
-	{% if projects|length > 3 %}
-	<div class="carousel-item">
-		<div class="cards row">
-		{% for project in projects|slice:"3:6" %}
-            <div class="col-4">
-                <a href="{{project.link}}" target="_blank">
-                <div class="card project-card">
-                    <div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover; background-image: url({{ project.image.url }})"></div>
-                    <div class="card-body">
-                        <p class="blue card-title">{{ project.title }}</p>
-                        <p class="blue card-text">{{ project.description }}</p>
-                        {% if project.labels %}
-                            <div class="project-labels d-flex">
-                            {% for label in project.labels %}
-                                <div class="badge badge-primary project-label">{{ label }}</div>
-                            {% endfor %}
-                            </div>
-                        {% endif %}
-                    </div>
-                </div>
-                </a>
-            </div>
-		{% endfor %}
-		</div>
-	</div>
-	{% endif %}
-	{% if projects|length > 6 %}
-	<div class="carousel-item">
-		<div class="cards row">
-		{% for project in projects|slice:"6:9" %}
-            <div class="col-4">
-                <a href="{{project.link}}" target="_blank">
-                <div class="card project-card">
-                    <div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover; background-image: url({{ project.image.url }})"></div>
-                    <div class="card-body">
-                        <p class="blue card-title">{{ project.title }}</p>
-                        <p class="blue card-text">{{ project.description }}</p>
-                        {% if project.labels %}
-                            <div class="project-labels d-flex">
-                            {% for label in project.labels %}
-                                <div class="badge badge-primary project-label">{{ label }}</div>
-                            {% endfor %}
-                            </div>
-                        {% endif %}
-                    </div>
-                </div>
-                </a>
-            </div>
-		{% endfor %}
-		</div>
-	</div>
-	{% endif %}
-	{% if projects|length > 9 %}
-	<div class="carousel-item">
-		<div class="cards row">
-		{% for project in projects|slice:"9:12" %}
-            <div class="col-4">
-                <a href="{{project.link}}" target="_blank">
-                <div class="card project-card">
-                    <div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover; background-image: url({{ project.image.url }})"></div>
-                    <div class="card-body">
-                        <p class="blue card-title">{{ project.title }}</p>
-                        <p class="blue card-text">{{ project.description }}</p>
-                        {% if project.labels %}
-                            <div class="project-labels d-flex">
-                            {% for label in project.labels %}
-                                <div class="badge badge-primary project-label">{{ label }}</div>
-                            {% endfor %}
-                            </div>
-                        {% endif %}
-                    </div>
-                </div>
-                </a>
-            </div>
-		{% endfor %}
-		</div>
-	</div>
-	{% endif %}
-	{% if projects|length > 12 %}
-	<div class="carousel-item">
-		<div class="cards row">
-		{% for project in projects|slice:"12:15" %}
-            <div class="col-4">
-                <a href="{{project.link}}" target="_blank">
-                <div class="card project-card">
-                    <div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover; background-image: url({{ project.image.url }})"></div>
-                    <div class="card-body">
-                        <p class="blue card-title">{{ project.title }}</p>
-                        <p class="blue card-text">{{ project.description }}</p>
-                        {% if project.labels %}
-                            <div class="project-labels d-flex">
-                            {% for label in project.labels %}
-                                <div class="badge badge-primary project-label">{{ label }}</div>
-                            {% endfor %}
-                            </div>
-                        {% endif %}
-                    </div>
-                </div>
-                </a>
-            </div>
-		{% endfor %}
-		</div>
-	</div>
-	{% endif %}
-	{% if projects|length > 15 %}
-	<div class="carousel-item">
-		<div class="cards row">
-		{% for project in projects|slice:"15:18" %}
-            <div class="col-4">
-                <a href="{{project.link}}" target="_blank">
-                <div class="card project-card">
-                    <div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover; background-image: url({{ project.image.url }})"></div>
-                    <div class="card-body">
-                        <p class="blue card-title">{{ project.title }}</p>
-                        <p class="blue card-text">{{ project.description }}</p>
-                        {% if project.labels %}
-                            <div class="project-labels d-flex">
-                            {% for label in project.labels %}
-                                <div class="badge badge-primary project-label">{{ label }}</div>
-                            {% endfor %}
-                            </div>
-                        {% endif %}
-                    </div>
-                </div>
-                </a>
-            </div>
-		{% endfor %}
-		</div>
-	</div>
-	{% endif %}
-	{% if projects|length > 18 %}
-	<div class="carousel-item">
-		<div class="cards row">
-		{% for project in projects|slice:"18:21" %}
-            <div class="col-4">
-                <a href="{{project.link}}" target="_blank">
-                <div class="card project-card">
-                    <div class="card-image" style="background: #e6e6e6 no-repeat center center; background-size:cover; background-image: url({{ project.image.url }})"></div>
-                    <div class="card-body">
-                        <p class="blue card-title">{{ project.title }}</p>
-                        <p class="blue card-text">{{ project.description }}</p>
-                        {% if project.labels %}
-                            <div class="project-labels d-flex">
-                            {% for label in project.labels %}
-                                <div class="badge badge-primary project-label">{{ label }}</div>
-                            {% endfor %}
-                            </div>
-                        {% endif %}
-                    </div>
-                </div>
-                </a>
-            </div>
-		{% endfor %}
-		</div>
-	</div>
-	{% endif %}
+    </div>
+    {% endfor %}
+    </div>
 </div>
-</div>
-{% if projects|length > 4 %}
-<div id="project-scroll">
-    <a class="carousel-control-next" href="#!"><span id="project-scroll-next"></span></a>
-</div>
-<div id="project-scroll">
-    <a class="carousel-control-prev" href="#!"><span id="project-scroll-prev"></span></a>
-</div>
-
-<button class="learn-more back-to-selection">
-    <a href="#!" onclick="showSelection()">
-        <span class="circle">
-            <span class="icon arrow"></span>
-        </span>
-        <span class="button-text orange" style="">See filters</span>
-    </a>
-</button>
-{% endif %}
 
 <script>
+    menuToggle = (section) => {
+        let nav = $(`#${section}-toggle`);
+        $(`#${section}-list`).slideToggle();
+        if (nav.hasClass("active")) {
+        nav.removeClass("active");
+        } else {
+        nav.addClass("active");
+        }
+    }
     $(document).ready(() => {
-        let carousel = $('#projectsCarousel');
+        $('.cards').flickity({
+            contain: true,
+            cellSelector: '.card-container',
+            pageDots: false
+        });
+
         let selected = {
             "web-dev" : false,
             "mobile-dev" : false,
@@ -261,8 +89,6 @@
             "ui-ux-design" : false,
             "graphic-design" : false
         }
-
-        carousel.carousel('pause');
 
         select = (id) => {
             selected[id] = !selected[id]
@@ -313,15 +139,5 @@
                 $(".padding-sides").css("opacity", "1");
             }, 600);
         }
-
-        $(".carousel-control-prev").click((event) => {
-            event.preventDefault();
-            carousel.carousel('prev');
-        });
-
-        $(".carousel-control-next").click((event) => {
-            event.preventDefault();
-            carousel.carousel('next');
-        });
     });
 </script>

@@ -625,11 +625,6 @@ button:hover .button-text {
   margin-top: 27.5vh;
 }
 
-#projectsCarousel .carousel-inner {
-  margin: 0 -15px -15px -15px;
-  padding: 0 15px 15px 15px;
-}
-
 .cards {
   margin-top: 30px;
   margin-right: 20px !important;
@@ -640,10 +635,18 @@ button:hover .button-text {
   text-decoration: none;
 }
 
+.card-container {
+  padding: 0 10px;
+}
+
+.flickity-enabled {
+  outline: none !important;
+}
+
 .project-card {
   padding: 0 !important;
   opacity: 0.95;
-  width: 100%;
+  width: 270px;
   height: 50vh;
   background: #f4f3f1;
   border-radius: 8px;
@@ -849,41 +852,24 @@ button:hover .button-text {
   .padding-top {
     margin-top: 25vh;
   }
-  .bubble {
-    font-size: 4vw;
-    padding: 7.5px 15px;
+  .bubble,
+  #filters-title {
+    display: none;
+    visibility: hidden;
   }
   .p-hide {
     display: block;
   }
-  #projectsCarousel {
-    display: none;
-  }
-  #project-scroll a {
-    display: none;
-    top: 20%;
-    transform: scale(0.6);
-  }
-  #project-scroll-prev {
-    left: 90vw;
-  }
   .padding-sides {
     padding: 0 2vw 0 10vw;
   }
-  .cards .col-4 {
-    max-width: 20% !important;
-    padding: 0 5px !important;
-  }
   .project-card {
     opacity: 1;
-    width: 50vw;
-    height: 50vh;
+    width: 200px;
+    height: 70vh;
     margin-top: -5vh;
     box-shadow: -5px 2px 5px rgba(0, 51, 93, 0.4);
     transition: all 0.4s ease-in-out;
-  }
-  .carousel-inner {
-    padding-top: 30px !important;
   }
   .project-card:hover {
     z-index: 10;
