@@ -639,6 +639,11 @@ button:hover .button-text {
   padding: 0 10px;
 }
 
+#projectsCarousel,
+.cards {
+  height: 55vh;
+}
+
 .flickity-enabled {
   outline: none !important;
 }
