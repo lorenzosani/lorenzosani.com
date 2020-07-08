@@ -40,23 +40,6 @@ $(document).ready(() => {
     $(".navigation, #scroll a span").css("opacity", "1");
   }, 2000);
 
-  // Navbar toggle open and close nav styles on click
-  let nav = $(".nav-toggle");
-  nav.click(() => {
-    $(".nav-list").slideToggle();
-    if (nav.hasClass("active")) {
-      nav.removeClass("active");
-    } else {
-      nav.addClass("active");
-    }
-  });
-  $(".nav-list li a").click(() => {
-    if ($("body").width() <= 769) {
-      nav.removeClass("active");
-      $("nav ul").slideToggle();
-    }
-  });
-
   // Sections appear and disappear animation
   homeDisappear = () => {
     $("#home").addClass("disappearBg");
@@ -96,6 +79,10 @@ $(document).ready(() => {
   };
   contactDisappear = () => {
     $("#nav-contact").css("top", "-10px").css("opacity", 0);
+    setTimeout(() => {
+      $("#nav-projects").css("top", "0").css("opacity", 1);
+      $(".padding-sides");
+    }, 600);
   };
 
   // Mouse wheel scroll animation

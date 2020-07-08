@@ -799,7 +799,7 @@ button:hover .button-text {
   }
   #about-text {
     margin-top: 30px;
-    font-size: 2.25vh;
+    font-size: 2.2vh;
     max-width: 100%;
     bottom: auto;
     top: 100px;
@@ -838,21 +838,12 @@ button:hover .button-text {
     margin: 20px 0;
     padding: 0 15px;
     line-height: 45px;
-    color: #00335d !important;
   }
   nav ul li ul li a {
     padding-left: 30px;
   }
   .nav-dropdown {
     position: static;
-  }
-  .text-hover:focus,
-  .text-hover:hover {
-    color: #00335d !important;
-  }
-  .text-hover:after {
-    background-color: #00335d !important;
-    height: 5px;
   }
   .padding-top {
     margin-top: 25vh;
@@ -870,7 +861,7 @@ button:hover .button-text {
   }
   .project-card {
     opacity: 1;
-    width: 200px;
+    width: 250px;
     height: 70vh;
     margin-top: -5vh;
     box-shadow: -5px 2px 5px rgba(0, 51, 93, 0.4);
@@ -888,6 +879,6 @@ button:hover .button-text {
     font-size: 4vw;
   }
   .card-text {
-    font-size: 3vw;
+    font-size: 3.5vw;
   }
 }
