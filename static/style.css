@@ -777,6 +777,18 @@ button:hover .button-text {
 }
 
 @media (max-width: 767px) {
+  .nav-white {
+    color: #f4f3f1 !important;
+  }
+
+  .nav-active {
+    color: #00335d !important;
+  }
+
+  .nav-inactive {
+    color: #f4f3f1 !important;
+  }
+
   .email {
     font-family: "DM Serif Text", serif;
     font-size: 7vw;
