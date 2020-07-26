@@ -1,5 +1,5 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
-<div id=loader></div>
+<div id="loader"></div>
 <div id="home" class="parallax">
   <div id="home-back">
     <div id="stars"></div>
@@ -57,15 +57,4 @@
   <div class="section" id="contact-section"></div>
   <div class="section"></div>
 </div>
-<script>
-  menuToggle = (section) => {
-    let nav = $(`#${section}-toggle`);
-    $(`#${section}-list`).slideToggle();
-    if (nav.hasClass("active")) {
-      nav.removeClass("active");
-    } else {
-      nav.addClass("active");
-    }
-  }
-</script>
 {% endblock %}

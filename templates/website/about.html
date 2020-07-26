@@ -37,16 +37,6 @@
 </div>
 
 <script>
-  menuToggle = (section) => {
-    let nav = $(`#${section}-toggle`);
-    $(`#${section}-list`).slideToggle();
-    if (nav.hasClass("active")) {
-      nav.removeClass("active");
-    } else {
-      nav.addClass("active");
-    }
-  }
-
   swipedetect = (el, callback) => {
     let touchsurface = el,
       swipedir,

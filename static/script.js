@@ -211,6 +211,16 @@ $(document).ready(() => {
     fullpage_api.moveTo(to, 0);
   };
 
+  menuToggle = section => {
+    let nav = $(`#${section}-toggle`);
+    $(`#${section}-list`).slideToggle();
+    if (nav.hasClass("active")) {
+      nav.removeClass("active");
+    } else {
+      nav.addClass("active");
+    }
+  };
+
   // Enable fullpage.js
   $("#fullpage").fullpage({
     licenseKey: "6565F2B8-BA0F41C3-BC8C06A0-1D42DA81",

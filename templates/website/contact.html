@@ -43,14 +43,3 @@
     <a href="https://www.github.com/lorenzosani/" target="_blank" ><img src="{% static 'github-blue.png' %}" height="35vh" width="35vh"></a>
   </div>
 </div>
-<script>
-  menuToggle = (section) => {
-    let nav = $(`#${section}-toggle`);
-    $(`#${section}-list`).slideToggle();
-    if (nav.hasClass("active")) {
-      nav.removeClass("active");
-    } else {
-      nav.addClass("active");
-    }
-  }
-</script>
