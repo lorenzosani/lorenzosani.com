@@ -111,15 +111,9 @@ $(document).ready(() => {
     }
   };
 
-  $("#home, #about-section, #projects-section").on(
-    "touchstart",
-    handleTouchStart
-  );
-  $("#home, #about-section, #projects-section").on("touchend", handleTouchEnd);
-  $("#home, #about-section, #projects-section").on(
-    "touchmove",
-    handleTouchMove
-  );
+  $("body").on("touchstart", handleTouchStart);
+  $("body").on("touchend", handleTouchEnd);
+  $("body").on("touchmove", handleTouchMove);
 
   var xDiff = null;
   var yDiff = null;
@@ -158,15 +152,16 @@ $(document).ready(() => {
     yDiff = yDown - yUp;
 
     if (Math.abs(xDiff) < Math.abs(yDiff)) {
+      console.log(Math.abs(xDiff) + " : " + Math.abs(yDiff));
       const current = fullpage_api.getActiveSection();
-      if (yDiff > 0) {
+      if (yDiff > 5) {
         if (sections[current["index"] + 1] != undefined) {
           animateSection(
             sections[current["index"]],
             sections[current["index"] + 1]
           );
         }
-      } else {
+      } else if (yDiff < -5) {
         if (sections[current["index"] - 1] != undefined) {
           animateSection(
             sections[current["index"]],
@@ -227,6 +222,7 @@ $(document).ready(() => {
     anchors: sections,
     scrollHorizontally: false,
     sectionsColor: ["#fc7753", "#00335d", "#fc7753", "#fc7753"],
-    scrollingSpeed: 1500
+    scrollingSpeed: 1500,
+    touchSensitivity: 100
   });
 });
