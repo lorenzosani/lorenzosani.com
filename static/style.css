@@ -651,7 +651,7 @@ button:hover .button-text {
 .project-card {
   padding: 0 !important;
   opacity: 0.95;
-  width: 270px;
+  width: 17.5vw;
   height: 50vh;
   background: #f4f3f1;
   border-radius: 8px;
@@ -709,7 +709,7 @@ button:hover .button-text {
 .project-label {
   margin: 4px 4px 4px 0;
   background-color: rgba(0, 23, 42, 0.3);
-  font-size: 11.5px;
+  font-size: 0.75vw;
 }
 
 .p-hide {
@@ -886,6 +886,9 @@ button:hover .button-text {
     box-shadow: 0px 2px 20px rgba(0, 51, 93, 0.8);
     transition: all 0.4s ease-in-out;
     text-decoration: none;
+  }
+  .project-label {
+    font-size: 11px;
   }
   .card-title {
     font-size: 4vw;
