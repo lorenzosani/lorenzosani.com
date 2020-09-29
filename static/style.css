@@ -328,7 +328,7 @@ nav ul li {
 }
 
 /* Learn More Button */
-button {
+button.learn-more {
   margin-top: 40px;
   position: relative;
   display: inline-block;
@@ -344,9 +344,6 @@ button {
   font-family: "Open Sans", sans-serif;
   opacity: 0.9;
   transition: opacity 0.3s;
-}
-
-button.learn-more {
   width: 12rem;
   height: auto;
 }
@@ -590,6 +587,8 @@ button:hover .button-text {
   width: fit-content;
   background-color: #f4f3f1;
   color: #00335d;
+  outline: none;
+  border: 0;
   border-radius: 20px;
   padding: 7.5px 15px;
   margin: 10px 10px 0 0;
@@ -646,6 +645,22 @@ button:hover .button-text {
 
 .flickity-enabled {
   outline: none !important;
+}
+
+.flickity-button {
+  background: transparent;
+  border: 0;
+}
+
+.flickity-button svg {
+  filter: invert(100%);
+  width: 2vh;
+  opacity: 0.9;
+}
+
+.flickity-button svg:hover {
+  opacity: 1;
+  transform: scale(1.2);
 }
 
 .project-card {
