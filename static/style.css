@@ -886,6 +886,10 @@ button:hover .button-text {
   .padding-sides {
     padding: 0 2vw 0 10vw;
   }
+  .flickity-button {
+    visibility: hidden;
+    display: none;
+  }
   .project-card {
     opacity: 1;
     width: 250px;
