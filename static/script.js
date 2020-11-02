@@ -52,15 +52,14 @@ $(document).ready(() => {
     }, 100);
   };
   aboutAppear = () => {
+    $("#about-text").css("top", "8vh").css("opacity", 1);
     setTimeout(() => {
       $(".image #front").css("bottom", 0);
-      $("#about-text").css("top", "8vh").css("opacity", 1);
       $("#nav-about").css("top", "0").css("opacity", 1);
     }, 600);
   };
   aboutDisappear = () => {
     $(".image #front").css("bottom", "-50px");
-    $("#about-text").css("top", "12vh").css("opacity", 0);
     $("#nav-about").css("top", "-10px").css("opacity", 0);
   };
   projectsAppear = () => {
@@ -73,6 +72,7 @@ $(document).ready(() => {
     $("#nav-projects").css("top", "-10px").css("opacity", 0);
   };
   contactAppear = () => {
+    $("#contact-header").css("top", "0").css("opacity", 1);
     setTimeout(() => {
       $("#nav-contact").css("top", "0").css("opacity", 1);
     }, 1200);
