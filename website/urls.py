@@ -9,4 +9,5 @@ urlpatterns = [
     path('sections/projects/', views.projects, name='projects'),
     path('sections/contact/', views.contact, name='contact'),
     path('projects/filter/', views.filterProjects, name='filter_projects'),
+    path('mindlayer/', views.mindlayer, name='mindlayer'),
 ] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

@@ -41,3 +41,7 @@ def filterProjects(request):
     for project in projects:
         project.labels = project.technologies_used.values_list('name', flat=True)
     return HttpResponse(template.render({ "projects" : projects }, request))
+
+def mindlayer(request):
+    template = loader.get_template('website/mindlayer.html')
+    return HttpResponse(template.render())
