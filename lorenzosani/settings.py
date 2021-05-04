@@ -7,7 +7,7 @@ SECRET_KEY = os.environ['SECRET_KEY']
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['lorenzosani.com', 'django-env.eba-gwgsz3pp.eu-west-2.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['lorenzosani.com', 'django-env.eba-gwgsz3pp.eu-west-2.elasticbeanstalk.com', 'lorenzosani.herokuapp.com']
 
 # Application definition
 
